@@ -1,11 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-// import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
-// import UnpluginComponentsVite from 'unplugin-vue-components/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 
-const lifecycle = process.env.npm_lifecycle_event
 export default defineNuxtConfig({
     ssr: true,
 
@@ -13,6 +9,12 @@ export default defineNuxtConfig({
     typescript: {
         strict: true,
         typeCheck: true,
+        tsConfig: {
+            compilerOptions: {
+                strict: true,
+                types: ['@pinia/nuxt', './type.d.ts'],
+            },
+        },
     },
 
     // plugins
@@ -29,12 +31,13 @@ export default defineNuxtConfig({
 
     // modules
     modules: [
-        '@intlify/nuxt3',
         '@nuxtjs/tailwindcss',
         '@pinia/nuxt',
         'unplugin-icons/nuxt',
         '@nuxt/content',
+        '@intlify/nuxt3',
     ],
+
 
     // auto import components
     components: true,
@@ -44,6 +47,19 @@ export default defineNuxtConfig({
         // global transition
         pageTransition: { name: 'page', mode: 'out-in' },
         layoutTransition: { name: 'layout', mode: 'out-in' },
+        head: {
+            meta: [
+                { name: 'google-site-verification', content: '77iFFXtD8szKWL5Xw9f9-SqeomLzmPFbwAWp_GrXLrY' },
+                { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+                { name: 'description', content: `浩呆前端` },
+                { name: 'description', content: `熱愛技術的前端小白` },
+                { name: 'keywords', content: `浩呆,浩呆前端,王教勛,王教勛前端` },
+                { property: 'og:title', content: `浩呆前端` },
+                { property: 'og:description', content: `熱愛技術的前端小白` },
+                { property: 'og:image', content: `https://upload.cc/i1/2023/02/08/tHrl3G.png` },
+            ],
+            link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+        }
     },
 
     // localization - i18n config
@@ -55,27 +71,19 @@ export default defineNuxtConfig({
             availableLocales: ['en', 'zh'],
         },
     },
-
     // vite
     vite: {
         // need add declare from xxx.d.ts
         define: {
             // __BUILD_TIME__: JSON.stringify(dayjs().format('YYYY/MM/DD HH:mm')),
         },
-        ssr: {
-            // noExternal: ['element-plus'],
-        },
-
         plugins: [
-            // AutoImport({
-            //     resolvers: [ElementPlusResolver({ importStyle: 'sass', ssr: true })], // 注意ssr配置参数
-            // }),
             Components({
                 dts: true,
                 resolvers: [
                     IconsResolver({
                         prefix: 'Icon',
-                    }),], // 全自动按需引入naive-ui组件
+                    }),],
             }),
         ],
         // 解决在开发模式下降低 naive-ui 引起的打包缓慢

@@ -7,17 +7,9 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    ElButton: typeof import('element-plus/es')['ElButton']
-    ElDropdown: typeof import('element-plus/lib')['ElDropdown']
-    ElDropdownItem: typeof import('element-plus/lib')['ElDropdownItem']
-    ElDropdownMenu: typeof import('element-plus/lib')['ElDropdownMenu']
     'Icon:ic:baselineArrowRightAlt': typeof import('~icons/ic/baseline-arrow-right-alt')['default']
     'IconLa:language': typeof import('~icons/la/language')['default']
     'IconMdi:githubFace': typeof import('~icons/mdi/github-face')['default']
-    'IconUil:clock': typeof import('~icons/uil/clock')['default']
-    'IconUil:laptop': typeof import('~icons/uil/laptop')['default']
-    'IconUil:moon': typeof import('~icons/uil/moon')['default']
-    'IconUil:sun': typeof import('~icons/uil/sun')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

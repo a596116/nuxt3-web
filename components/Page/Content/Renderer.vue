@@ -18,10 +18,8 @@ const { data } = await useAsyncData(props.path, () => queryContent(props.path).f
     <PageHeader>
       <PageTitle :text="pageTitle" class="capitalize" />
     </PageHeader>
-    <PageBody>
-      <PageSection>
-        <ContentRenderer :value="data" />
-      </PageSection>
-    </PageBody>
+    <PageSection>
+      <ContentRenderer :value="data" />
+    </PageSection>
   </PageWrapper>
 </template>

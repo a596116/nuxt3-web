@@ -4,6 +4,6 @@
   "compilerOptions": {
     // "strict": true,
     // "skipLibCheck": true,
-    "types": ["@intlify/nuxt3", "@pinia/nuxt"]
+    "types": ["@pinia/nuxt", "@intlify/nuxt3"]
   }
 }

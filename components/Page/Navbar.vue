@@ -17,7 +17,8 @@ const menus = computed((): IMenuItem[] => [
 </script>
 
 <template>
-  <div class="relative hidden items-center justify-between px-10 py-4 lg:flex">
+  <div
+    class="fixed z-50 hidden w-full items-center justify-between bg-transparent px-10 py-4 lg:flex">
     <!-- title -->
     <NuxtLink
       tag="a"

@@ -4,11 +4,9 @@
       <PageHeader>
         <PageTitle :text="doc.title" />
       </PageHeader>
-      <PageBody>
-        <PageSection>
-          <ContentRenderer :value="doc" />
-        </PageSection>
-      </PageBody>
+      <PageSection>
+        <ContentRenderer :value="doc" />
+      </PageSection>
     </template>
     <template #empty>
       <h1>Post in empty</h1>

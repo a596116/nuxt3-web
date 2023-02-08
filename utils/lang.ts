@@ -23,8 +23,9 @@ export const availableLocales: ILocales = {
 
 export function LanguageManager() {
   // composable
-  const { locale } = useI18n()
+  const locale = useI18n().locale
   const localeUserSetting = useCookie('locale')
+
 
   // methods
   const getSystemLocale = (): string => {
@@ -34,7 +35,7 @@ export function LanguageManager() {
         : 'zh'
       return availableLocales[foundLang] ? foundLang : 'zh'
     } catch (error) {
-      return 'zn'
+      return 'zh'
     }
   }
   const getUserLocale = (): string =>
