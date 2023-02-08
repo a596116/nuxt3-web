@@ -6,11 +6,11 @@
   "pages": {
     "404": { "title": "page not found" },
     "index": { "title": "Home" },
-    "blank": {
-      "nav": "blank",
-      "title": "blank page",
-      "description": "this is a blank page",
-      "just_blank_page_with_title": "just blank page with title"
+    "collection": {
+      "nav": "collection",
+      "title": "collection page",
+      "description": "this is a collection page",
+      "just_collection_page_with_title": "just collection page with title"
     },
     "articles": {
       "nav": "articles",

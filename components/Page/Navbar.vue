@@ -11,7 +11,7 @@ export interface IMenuItem {
 const { t } = useLang()
 const app = useAppConfig() as AppConfigInput
 const menus = computed((): IMenuItem[] => [
-  { type: 'link', text: t('pages.blank.nav'), route: { name: 'blank' } },
+  { type: 'link', text: t('pages.collection.nav'), route: { name: 'collection' } },
   { type: 'link', text: t('pages.articles.nav'), route: { name: 'articles' } },
 ])
 </script>

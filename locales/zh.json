@@ -6,11 +6,11 @@
   "pages": {
     "404": { "title": "找不到該網頁" },
     "index": { "title": "首頁" },
-    "blank": {
-      "nav": "空白",
-      "title": "空白頁",
-      "description": "這是一個空白頁",
-      "just_blank_page_with_title": "只是帶有標題的空白頁"
+    "collection": {
+      "nav": "作品",
+      "title": "作品集",
+      "description": "這是一個作品集",
+      "just_collection_page_with_title": "只是帶有標題的作品集"
     },
     "articles": { "nav": "文章", "title": "文章", "description": "這是一個文章頁面" },
     "test": {

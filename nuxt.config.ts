@@ -21,7 +21,7 @@ export default defineNuxtConfig({
     // plugins: ['~/plugins/element-plus'],
 
     // css
-    css: ['~/assets/sass/app.scss'],
+    css: ['~/assets/sass/app.scss', '~/assets/sass/mode/dark.scss', '~/assets/sass/mode/light.scss'],
 
 
     // build
