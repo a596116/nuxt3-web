@@ -6,7 +6,7 @@ components:
     change_theme: change theme
 pages:
   index:
-    title: HaoDai
+    title: Home
   404:
     title: page not found
   blank:
@@ -14,10 +14,10 @@ pages:
     title: blank page
     description: this is a blank page
     just_blank_page_with_title: just blank page with title
-  post:
-    nav: post
-    title: post
-    description: this is a post page
+  articles:
+    nav: articles
+    title: articles
+    description: this is a articles page
   test:
     nav: test
     title: testing

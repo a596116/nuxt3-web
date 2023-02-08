@@ -1,26 +1,26 @@
 components:
   language_switcher:
-    change_language: 切换语言
+    change_language: 切換語言
   theme_switcher:
-    theme: 主题
-    change_theme: 切换主题
+    theme: 主題
+    change_theme: 切換主題
 pages:
   index:
-    title: 浩呆
+    title: 首頁
   404:
-    title: 找不到该页面
+    title: 找不到該網頁
   blank:
     nav: 空白
-    title: 空白页
-    description: 这是一个空白页
-    just_blank_page_with_title: 只是带有标题的空白页
-  post:
+    title: 空白頁
+    description: 這是一個空白頁
+    just_blank_page_with_title: 只是帶有標題的空白頁
+  articles:
     nav: 文章
     title: 文章
-    description: 这是一个文章页面
+    description: 這是一個文章頁面
   test:
-    nav: 测试
-    title: 测试
+    nav: 測試
+    title: 測試
     description: 这是一个测试页面
     counter: 计数器
     increment: 增加
@@ -67,6 +67,6 @@ banners:
   welcome: 你好, 欢迎来到 %{app_name}!
 others:
   learn_more: 了解更多
-  copy: 复制
-  enabled: 启用
+  copy: 複製
+  enabled: 啟用
   disabled: 禁用

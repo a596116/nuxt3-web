@@ -8,8 +8,12 @@ module.exports = {
         './plugins/**/*.{js,ts}',
         './app.{js,ts,vue}'
     ],
+    // safelist: ["dark"],
+    // darkMode: "class",
     theme: {
-        extend: {}
+        extend: {
+
+        }
     },
     plugins: []
 }
