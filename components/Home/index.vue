@@ -1,19 +1,33 @@
 <template>
-  <div
-    class="relative flex h-[1100px] min-h-screen w-full flex-col items-center justify-center md:h-full">
+  <div class="relative flex h-screen min-h-screen w-screen flex-col overflow-hidden">
     <ul class="bgList">
       <li
         v-for="n in total"
         :key="n"
         :style="img(n - 1)"
-        :class="{ active: bgactive === n - 1 || bgpreactive === n - 1 }"></li>
+        :class="{ active: bgactive === n - 1 || bgpreactive === n - 1 }">
+        <div class="drop-shadow">
+          <div class="glass" :style="img(n - 1)"></div>
+          <div class="title">
+            <span class="text-5xl md:text-7xl">HaoDai </span>
+            <span class="mt-4 text-2xl">熱愛前端的小白</span>
+          </div>
+        </div>
+      </li>
     </ul>
-    <div class="relative top-[120px] z-50 md:absolute md:left-[calc(50%-420px)]">
-      <HomeIndroduce />
-    </div>
-    <!-- <div class="absolute"> -->
-    <HomeCard class="z-40" />
-    <!-- </div> -->
+    <section class="relative h-full w-full">
+      <img
+        src="https://s2.loli.net/2023/02/09/KeEFTM9tNlZmY3r.jpg"
+        class="h-screen object-cover"
+        alt="" />
+      <div class="absolute drop-shadow">
+        <img src="https://s2.loli.net/2023/02/09/KeEFTM9tNlZmY3r.jpg" class="glass" alt="" />
+        <div class="title">
+          <span class="text-5xl md:text-7xl">HaoDai </span>
+          <span class="mt-4 text-2xl">熱愛前端的小白</span>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -37,25 +51,32 @@ const img = (n: number) => {
   }
 }
 
-setInterval(() => {
-  bgpreactive.value = bgactive.value
-  bgactive.value = (bgactive.value + 1 + total.value) % total.value
-}, (animationDuration / 2) * 1500)
+onNuxtReady(() => {
+  setInterval(() => {
+    bgpreactive.value = bgactive.value
+    bgactive.value = (bgactive.value + 1 + total.value) % total.value
+  }, (animationDuration / 2) * 1500)
+})
 </script>
 
 <style scoped lang="scss">
 .bgList {
-  @apply absolute top-[50%] left-[50%] z-0 hidden h-full w-full -translate-x-[50%] -translate-y-[50%] duration-500  md:block;
+  @apply absolute z-0 hidden h-full w-full duration-500 md:block;
+  @apply top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%];
   list-style: none;
 
   li {
     @apply absolute h-full w-full opacity-0;
-    background: center no-repeat;
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: 150% auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @media (min-width: 768px) {
+      background-position: 0 0;
+    }
 
     &.active {
       animation: bgAnimate linear;
@@ -63,9 +84,47 @@ setInterval(() => {
   }
 }
 
-.scroll .bgList {
-  width: 70%;
-  height: 300px;
+.drop-shadow {
+  height: 90%;
+  width: 80%;
+  filter: drop-shadow(0px 20px 10px rgba(0, 0, 0, 0.3));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.glass {
+  height: 90%;
+  width: 80%;
+  background-size: cover;
+  background-position: center;
+  -webkit-clip-path: inset(10em);
+  clip-path: inset(10em);
+  filter: blur(15px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.7s ease-in-out;
+}
+.drop-shadow .title {
+  @apply absolute z-[5] flex flex-col items-center justify-center text-white;
+  span {
+    letter-spacing: 0.5em;
+    padding-left: 0.375em;
+  }
+}
+
+@media (max-width: 980px) {
+  .glass {
+    -webkit-clip-path: inset(0);
+    clip-path: inset(0);
+    width: 100%;
+    height: 40%;
+  }
+
+  .drop-shadow {
+    top: 5em;
+    width: 100%;
+  }
 }
 
 @keyframes bgAnimate {

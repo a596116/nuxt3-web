@@ -20,9 +20,9 @@ useHead(() => ({
 <template>
   <PageWrapper class="flex flex-1" :top="false">
     <!-- <PageSection class="flex flex-1 flex-col items-center"> -->
-    <div class="md:w-5/8 z-10 flex flex-1 flex-col">
-      <Home />
-    </div>
+    <!-- <div class="md:w-5/8 z-10 flex flex-1 flex-col"> -->
+    <Home />
+    <!-- </div> -->
     <!-- </PageSection> -->
   </PageWrapper>
 </template>

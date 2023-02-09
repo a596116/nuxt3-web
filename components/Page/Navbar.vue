@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import { AppConfigInput } from '@nuxt/schema'
-
 export interface IMenuItem {
   type: 'link' | 'button'
   text: string
@@ -9,7 +7,9 @@ export interface IMenuItem {
 }
 
 const { t } = useLang()
+
 const menus = computed((): IMenuItem[] => [
+  { type: 'link', text: t('pages.about.nav'), route: { name: 'about' } },
   { type: 'link', text: t('pages.collection.nav'), route: { name: 'collection' } },
   { type: 'link', text: t('pages.articles.nav'), route: { name: 'articles' } },
 ])
@@ -20,8 +20,8 @@ const menus = computed((): IMenuItem[] => [
     <template #menu>
       <div class="relative ml-auto hidden items-center lg:flex">
         <nav class="text-xl font-semibold leading-6 text-gray-300" role="navigation">
-          <ul class="flex items-center space-x-8">
-            <li v-for="(item, i) in menus" :key="i" class="group relative mr-6 mb-1">
+          <ul class="flex items-center">
+            <li v-for="(item, i) in menus" :key="i" class="group relative mx-6 mb-1">
               <div
                 class="absolute left-0 bottom-0 z-0 h-0 w-full opacity-75 transition-all group-hover:h-2 group-hover:bg-yellow-400"></div>
               <Anchor
