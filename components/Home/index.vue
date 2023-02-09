@@ -15,7 +15,7 @@
         </div>
       </li>
     </ul>
-    <section class="relative h-full w-full">
+    <section class="relative block h-full w-full md:hidden">
       <img
         src="https://s2.loli.net/2023/02/09/KeEFTM9tNlZmY3r.jpg"
         class="h-screen object-cover"

@@ -137,7 +137,7 @@ const skills = [
 
 <style scoped lang="scss">
 .card {
-  @apply relative top-[60px] m-auto flex h-[400px] w-full max-w-[700px] items-center justify-center;
+  @apply relative m-auto flex h-[400px] w-full max-w-[700px] items-center justify-center;
   background-color: rgba(255, 255, 255, 0.85);
   border-radius: 25px;
   box-shadow: 10px 0 50px rgba(0, 0, 0, 0.5);

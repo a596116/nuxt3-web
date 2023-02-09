@@ -13,8 +13,6 @@ declare module '@vue/runtime-core' {
     'IconMdi:github': typeof import('~icons/mdi/github')['default']
     'IconMdi:githubFace': typeof import('~icons/mdi/github-face')['default']
     'IconMdi:instagram': typeof import('~icons/mdi/instagram')['default']
-    'IconMdi:instagramFace': typeof import('~icons/mdi/instagram-face')['default']
-    'IconSimpleIcons:nuxtdotjs': typeof import('~icons/simple-icons/nuxtdotjs')['default']
     'IconUil:bars': typeof import('~icons/uil/bars')['default']
     'IconUil:times': typeof import('~icons/uil/times')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

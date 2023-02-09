@@ -32,7 +32,7 @@ onMounted(() => {
           leave="duration-300 ease-in"
           leave-from="opacity-100"
           leave-to="opacity-0">
-          <div class="fixed top-6 z-50 flex w-screen" style="max-height: 66.666667%">
+          <div class="fixed top-6 z-[100] flex w-screen" style="max-height: 66.666667%">
             <div
               class="max-w-8xl relative mx-auto flex w-full flex-1 flex-col justify-end space-y-1 overflow-y-auto px-4 pb-4">
               <slot />

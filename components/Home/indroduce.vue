@@ -129,6 +129,7 @@ const handleButtonClick = (e: any) => {
   box-shadow: 10px 0 50px rgba(0, 0, 0, 0.5);
   @media (max-width: 768px) {
     width: 90%;
+    height: 450px !important;
     overflow-y: auto;
   }
 }

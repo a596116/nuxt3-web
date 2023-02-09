@@ -1,11 +1,12 @@
 <template>
-  <PageWrapper class="flex flex-1" :top="false">
-    <PageSection class="flex h-[1200px] flex-1 flex-col items-center md:h-full">
-      <div class="relative top-[120px] z-50 md:absolute md:left-[calc(50%-420px)]">
-        <HomeIndroduce />
-      </div>
-      <HomeCard class="z-40" />
-    </PageSection>
+  <PageWrapper
+    class="mb-6 flex min-h-[1200px] flex-1 flex-col items-center px-4 md:min-h-full lg:px-8">
+    <!-- <PageSection class="flex h-[1200px] flex-1 flex-col items-center md:h-full"> -->
+    <div class="relative top-[20px] z-50 md:absolute md:top-[120px] md:left-[calc(50%-420px)]">
+      <HomeIndroduce />
+    </div>
+    <HomeCard class="z-40" />
+    <!-- </PageSection> -->
   </PageWrapper>
 </template>
 

@@ -29,7 +29,7 @@ const toggleOptions = (show?: boolean) => {
 <template>
   <div
     ref="navbar"
-    class="fixed top-0 z-40 w-full flex-none border-b border-gray-900/10 backdrop-blur-md backdrop-filter transition-colors duration-300 dark:border-gray-50/[0.2] lg:z-50">
+    class="fixed top-0 z-[99] w-full flex-none border-b border-gray-900/10 backdrop-blur-md backdrop-filter transition-colors duration-300 dark:border-gray-50/[0.2]">
     <div class="max-w-8xl mx-auto w-full">
       <div class="mx-4 py-3 lg:mx-0 lg:px-8">
         <div class="relative flex items-center">
