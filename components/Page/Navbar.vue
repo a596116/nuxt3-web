@@ -17,49 +17,93 @@ const menus = computed((): IMenuItem[] => [
 </script>
 
 <template>
-  <div
-    class="fixed z-50 hidden w-full items-center justify-between bg-transparent px-10 py-4 lg:flex">
-    <!-- title -->
-    <NuxtLink
-      tag="a"
-      class="text-md mr-3 flex-none overflow-hidden font-bold text-gray-900 dark:text-gray-200 md:w-auto"
-      :to="{ name: 'index' }">
-      <span class="sr-only">home</span>
-      <span class="flex items-center text-lg">
-        <img src="~/assets/img/logo.png" alt="浩呆" class="text-primary-500 mx-5 w-10" />
-        {{ app.name }}
-      </span>
-    </NuxtLink>
-
-    <!-- menu -->
-    <div class="flex items-center justify-center">
-      <nav
-        class="text-2xl font-semibold leading-6 text-gray-600 dark:text-gray-300"
-        role="navigation">
-        <ul class="flex items-center space-x-8">
-          <li v-for="(item, i) in menus" :key="i" class="group relative mr-6 mb-1">
-            <div
-              class="absolute left-0 bottom-0 z-0 h-0 w-full opacity-75 transition-all group-hover:h-2 group-hover:bg-yellow-400"></div>
-            <Anchor
-              v-if="item.type === 'link'"
-              :to="item.route ? item.route : undefined"
-              :href="item.href ? item.href : undefined"
-              class="relative z-10 capitalize hover:text-slate-900 hover:no-underline hover:dark:text-white"
-              >{{ item.text }}</Anchor
-            >
-            <button
-              v-else-if="item.type === 'button'"
-              :text="item.text"
-              size="xs"
-              class="font-extrabold capitalize"
-              :to="item.route ? item.route : undefined"
-              :href="item.href ? item.href : undefined" />
-          </li>
-        </ul>
-      </nav>
-      <div class="ml-6 flex space-x-4 border-l border-gray-900/10 pl-6 dark:border-gray-50/[0.2]">
-        <LanguageSwitcher />
+  <BuilderNavbar>
+    <template #menu>
+      <div class="relative ml-auto hidden items-center lg:flex">
+        <nav
+          class="text-sm font-semibold leading-6 text-gray-600 dark:text-gray-300"
+          role="navigation">
+          <ul class="flex items-center space-x-8">
+            <li v-for="(item, i) in menus" :key="i">
+              <Anchor
+                v-if="item.type === 'link'"
+                :to="item.route ? item.route : undefined"
+                :href="item.href ? item.href : undefined"
+                class="capitalize hover:text-slate-900 hover:no-underline hover:dark:text-white"
+                >{{ item.text }}</Anchor
+              >
+              <Button
+                v-else-if="item.type === 'button'"
+                :text="item.text"
+                size="xs"
+                class="font-extrabold capitalize"
+                :to="item.route ? item.route : undefined"
+                :href="item.href ? item.href : undefined" />
+            </li>
+          </ul>
+        </nav>
+        <div class="ml-6 flex space-x-4 border-l border-gray-900/10 pl-6 dark:border-gray-50/[0.2]">
+          <LanguageSwitcher />
+          <!-- <ThemeSwitcher /> -->
+          <Anchor
+            class="flex items-center self-center text-lg hover:text-slate-900 hover:no-underline hover:dark:text-white"
+            href="https://github.com/viandwi24/nuxt3-awesome-starter"
+            title="Github">
+            <IconMdi:github-face />
+          </Anchor>
+        </div>
       </div>
-    </div>
-  </div>
+    </template>
+    <template #options="{ toggleOptions }">
+      <ActionSheet @on-close="toggleOptions(false)">
+        <ActionSheetBody>
+          <ActionSheetHeader text="Menu" />
+          <nav class="font-semibold leading-6 text-gray-600 dark:text-gray-300">
+            <ul class="flex flex-col">
+              <li
+                v-for="(item, i) in menus"
+                :key="i"
+                class="flex w-full"
+                :class="{
+                  'mb-2 border-b border-gray-900/10 pb-2 dark:border-gray-50/[0.2]':
+                    item.type === 'link',
+                }">
+                <Anchor
+                  v-if="item.type === 'link'"
+                  :to="item.route ? item.route : undefined"
+                  :href="item.href ? item.href : undefined"
+                  class="flex-1 capitalize hover:no-underline"
+                  >{{ item.text }}</Anchor
+                >
+                <Button
+                  v-else-if="item.type === 'button'"
+                  :text="item.text"
+                  size="xs"
+                  class="flex-1 font-extrabold capitalize"
+                  :to="item.route ? item.route : undefined"
+                  :href="item.href ? item.href : undefined" />
+              </li>
+            </ul>
+          </nav>
+          <div class="mt-6 text-sm font-bold capitalize">
+            {{ $t('components.language_switcher.change_language') }}
+          </div>
+          <div class="mt-2">
+            <LanguageSwitcher type="select-box" />
+          </div>
+        </ActionSheetBody>
+        <Button type="secondary" title="Github" href="https://github.com/a596116">
+          <IconMdi:github-face />
+          <span class="ml-1">Github</span>
+        </Button>
+        <Button
+          type="secondary"
+          title="Instagram"
+          href="https://github.com/viandwi24/nuxt3-awesome-starter">
+          <IconMdi:instagram />
+          <span class="ml-1">Instagram</span>
+        </Button>
+      </ActionSheet>
+    </template>
+  </BuilderNavbar>
 </template>

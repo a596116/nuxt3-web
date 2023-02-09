@@ -13,7 +13,7 @@ const app = useAppConfig() as AppConfigInput
         </div>
         <div class="ml-3 text-xs text-gray-600 dark:text-gray-400">
           Copyright © 2023 <a :href="app.author.link">{{ app.author.name }}</a
-          >. All rights reserved. Made with <span class="text-red-500">❤</span>
+          >. 版權所有，請勿抄襲 <span class="text-red-500">❤</span>
           <!-- <div class="flex flex-col items-center space-x-2 md:float-right md:flex-row">
             <span class="text-center md:text-right">
               design by <a href="https://github.com/viandwi24">浩呆</a>

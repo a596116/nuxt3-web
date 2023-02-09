@@ -1,5 +1,5 @@
 <template>
-  <div class="relative flex-1" :class="{ 'pt-[90px]': props.top }">
+  <div class="relative flex-1" :class="{ 'pt-[80px]': props.top }">
     <slot />
   </div>
 </template>
