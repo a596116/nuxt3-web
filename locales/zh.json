@@ -5,7 +5,33 @@
   },
   "pages": {
     "404": { "title": "找不到該網頁" },
-    "index": { "title": "首頁" },
+    "index": {
+      "title": "首頁",
+      "about": {
+        "title": "關於",
+        "description": "畢業於靜宜大學 資料科學暨大數據分析與應用學系。 擅長於前端技術並熟悉使用Vue.js框架、Git版控開發網站。 在後端方面也會使用Nodjs搭配egg串接RestfulAPI，也使用過Django開發LineBot"
+      },
+      "experience": {
+        "title": "經歷",
+        "2011": {
+          "title": "永豐國中",
+          "description": "普通班"
+        },
+        "2014": {
+          "title": "永豐高中",
+          "description": "普通班"
+        },
+        "2018": {
+          "title": "靜宜大學",
+          "description": "資料科學暨大數據分析與應用學系"
+        },
+        "2023": {
+          "title": "工作中",
+          "description": "尚玄國際股份有限公司-前端工程師"
+        }
+      },
+      "contact": "聯絡資訊"
+    },
     "collection": {
       "nav": "作品",
       "title": "作品集",

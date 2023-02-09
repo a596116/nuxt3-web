@@ -10,6 +10,7 @@ declare module '@vue/runtime-core' {
     'Icon:ic:baselineArrowRightAlt': typeof import('~icons/ic/baseline-arrow-right-alt')['default']
     'IconFaSolid:ellipsisV': typeof import('~icons/fa-solid/ellipsis-v')['default']
     'IconLa:language': typeof import('~icons/la/language')['default']
+    'IconMdi:github': typeof import('~icons/mdi/github')['default']
     'IconMdi:githubFace': typeof import('~icons/mdi/github-face')['default']
     'IconMdi:instagram': typeof import('~icons/mdi/instagram')['default']
     'IconMdi:instagramFace': typeof import('~icons/mdi/instagram-face')['default']

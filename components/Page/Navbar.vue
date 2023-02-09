@@ -9,7 +9,6 @@ export interface IMenuItem {
 }
 
 const { t } = useLang()
-const app = useAppConfig() as AppConfigInput
 const menus = computed((): IMenuItem[] => [
   { type: 'link', text: t('pages.collection.nav'), route: { name: 'collection' } },
   { type: 'link', text: t('pages.articles.nav'), route: { name: 'articles' } },
@@ -20,11 +19,11 @@ const menus = computed((): IMenuItem[] => [
   <BuilderNavbar>
     <template #menu>
       <div class="relative ml-auto hidden items-center lg:flex">
-        <nav
-          class="text-sm font-semibold leading-6 text-gray-600 dark:text-gray-300"
-          role="navigation">
+        <nav class="text-xl font-semibold leading-6 text-gray-300" role="navigation">
           <ul class="flex items-center space-x-8">
-            <li v-for="(item, i) in menus" :key="i">
+            <li v-for="(item, i) in menus" :key="i" class="group relative mr-6 mb-1">
+              <div
+                class="absolute left-0 bottom-0 z-0 h-0 w-full opacity-75 transition-all group-hover:h-2 group-hover:bg-yellow-400"></div>
               <Anchor
                 v-if="item.type === 'link'"
                 :to="item.route ? item.route : undefined"
@@ -47,9 +46,9 @@ const menus = computed((): IMenuItem[] => [
           <!-- <ThemeSwitcher /> -->
           <Anchor
             class="flex items-center self-center text-lg hover:text-slate-900 hover:no-underline hover:dark:text-white"
-            href="https://github.com/viandwi24/nuxt3-awesome-starter"
+            href="https://github.com/a596116"
             title="Github">
-            <IconMdi:github-face />
+            <IconMdi:github />
           </Anchor>
         </div>
       </div>
@@ -96,10 +95,7 @@ const menus = computed((): IMenuItem[] => [
           <IconMdi:github-face />
           <span class="ml-1">Github</span>
         </Button>
-        <Button
-          type="secondary"
-          title="Instagram"
-          href="https://github.com/viandwi24/nuxt3-awesome-starter">
+        <Button type="secondary" title="Instagram" href="https://www.instagram.com/haodai_0621/">
           <IconMdi:instagram />
           <span class="ml-1">Instagram</span>
         </Button>

@@ -1,8 +1,8 @@
 ---
-title: 父組件執行子組件,獲取子組屬性defineExpose
-description: 父組件執行子組件,獲取子組屬性defineExpose
-author: a596116
-date: 2022-08-20
+title: '父組件執行子組件,獲取子組屬性defineExpose'
+description: '父組件執行子組件,獲取子組屬性defineExpose'
+author: 'a596116'
+date: '2022-08-20'
 tags: 
   - vue
 ---

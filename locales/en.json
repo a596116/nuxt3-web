@@ -5,7 +5,33 @@
   },
   "pages": {
     "404": { "title": "page not found" },
-    "index": { "title": "Home" },
+    "index": {
+      "title": "Home",
+      "about": {
+        "title": "About",
+        "description": "Graduated from Providence University with a degree in Data Science and Big Data Analytics and Applications. He is good at front-end technology and is familiar with using Vue.js framework and Git moderation to develop websites. In the back-end, I also use Nodjs with egg to connect RestfulAPI, and I have also used Django to develop LineBot."
+      },
+      "experience": {
+        "title": "Experience",
+        "2011": {
+          "title": "Yung-Feng High School",
+          "description": "Regular Class"
+        },
+        "2014": {
+          "title": "Yung-Feng High School",
+          "description": "普通Regular Class班"
+        },
+        "2018": {
+          "title": "Providence University",
+          "description": "Data Science"
+        },
+        "2023": {
+          "title": "Working",
+          "description": "尚玄國際股份有限公司-Front End Engineer"
+        }
+      },
+      "contact": "Information"
+    },
     "collection": {
       "nav": "collection",
       "title": "collection page",

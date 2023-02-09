@@ -7,28 +7,6 @@ const navbar = ref(null)
 const showDrawer = useState<boolean>('navbar.showDrawer', () => false)
 const showOptions = useState<boolean>('navbar.showOptions', () => false)
 
-// lifecycle
-let timer: NodeJS.Timer
-onMounted(() => {
-  if (!navbar.value) return
-
-  // scroll
-  const { onScroll } = useSticky(navbar.value, 0)
-  setTimeout(() => onScroll(), 50)
-
-  // on show on mobile
-  setInterval(() => {
-    // must in mobile
-    const minW = 1024
-    if (window.innerWidth < minW) {
-      updateDrawerOptions()
-    }
-  }, 100)
-})
-onBeforeUnmount(() => {
-  if (timer) clearInterval(timer)
-})
-
 // methods
 const updateDrawerOptions = () => {
   // drawer
@@ -51,7 +29,7 @@ const toggleOptions = (show?: boolean) => {
 <template>
   <div
     ref="navbar"
-    class="absolute top-0 z-40 w-full flex-none border-b border-gray-900/10 backdrop-blur-md backdrop-filter transition-colors duration-300 dark:border-gray-50/[0.2] lg:z-50">
+    class="fixed top-0 z-40 w-full flex-none border-b border-gray-900/10 backdrop-blur-md backdrop-filter transition-colors duration-300 dark:border-gray-50/[0.2] lg:z-50">
     <div class="max-w-8xl mx-auto w-full">
       <div class="mx-4 py-3 lg:mx-0 lg:px-8">
         <div class="relative flex items-center">

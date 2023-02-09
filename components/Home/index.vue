@@ -1,28 +1,23 @@
 <template>
-  <div :class="{ scroll }" class="relative flex h-screen w-full items-center justify-center">
+  <div
+    class="relative flex h-[1100px] min-h-screen w-full flex-col items-center justify-center md:h-full">
     <ul class="bgList">
       <li
         v-for="n in total"
         :key="n"
         :style="img(n - 1)"
-        :class="{ active: bgactive === n - 1 || bgpreactive === n - 1 }">
-        <div class="drop-shadow">
-          <div class="glass" :style="img(n - 1)"></div>
-          <span>HaoDai</span>
-        </div>
-        <div
-          :class="{ 'mouse-show': scroll }"
-          class="absolute bottom-[80px] flex flex-col items-center justify-center">
-          <div class="mouse"></div>
-          <p class="mouse-text">Scroll</p>
-        </div>
-      </li>
+        :class="{ active: bgactive === n - 1 || bgpreactive === n - 1 }"></li>
     </ul>
+    <div class="relative top-[120px] z-50 md:absolute md:left-[calc(50%-420px)]">
+      <HomeIndroduce />
+    </div>
+    <!-- <div class="absolute"> -->
+    <HomeCard class="z-40" />
+    <!-- </div> -->
   </div>
 </template>
 
 <script setup lang="ts">
-const scroll = useState<boolean>('home.scroll', () => false)
 const total = useState<number>('home.total', () => 5)
 const animationDuration = 10
 const bgactive = useState<number>('home.bgactive', () => 0)
@@ -42,12 +37,6 @@ const img = (n: number) => {
   }
 }
 
-onNuxtReady(() => {
-  window.addEventListener('scroll', function () {
-    scroll.value = window.scrollY > 0
-  })
-})
-
 setInterval(() => {
   bgpreactive.value = bgactive.value
   bgactive.value = (bgactive.value + 1 + total.value) % total.value
@@ -55,9 +44,8 @@ setInterval(() => {
 </script>
 
 <style scoped lang="scss">
-@import '~/assets/sass/mouse.scss';
 .bgList {
-  @apply absolute top-[50%] left-[50%] z-10 h-full w-full -translate-x-[50%] -translate-y-[50%] bg-transparent duration-500;
+  @apply absolute top-[50%] left-[50%] z-0 hidden h-full w-full -translate-x-[50%] -translate-y-[50%] duration-500  md:block;
   list-style: none;
 
   li {
@@ -93,66 +81,6 @@ setInterval(() => {
   to {
     opacity: 0;
     background-size: 110% auto;
-  }
-}
-
-:deep(.homeTitle) {
-  @apply absolute bottom-40 flex flex-row justify-center;
-  span {
-    @apply text-6xl text-gray-400 duration-500;
-    letter-spacing: 5px;
-  }
-  .typed-cursor {
-    font-size: 3.75rem !important;
-  }
-}
-
-.drop-shadow {
-  height: 90%;
-  width: 80%;
-  filter: drop-shadow(0px 20px 10px rgba(0, 0, 0, 0.3));
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.glass {
-  height: 90%;
-  width: 80%;
-  background-size: cover;
-  background-position: center;
-  -webkit-clip-path: inset(10em);
-  clip-path: inset(10em);
-  filter: blur(15px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.7s ease-in-out;
-}
-.drop-shadow > span {
-  position: absolute;
-  z-index: 5;
-  color: white;
-  font-size: 4em;
-  letter-spacing: 0.5em;
-  padding-left: 0.375em;
-}
-
-.scroll .glass {
-  height: 0;
-  width: 0;
-}
-@media (max-width: 980px) {
-  .glass {
-    -webkit-clip-path: inset(5em);
-    clip-path: inset(5em);
-  }
-
-  .drop-shadow:before {
-    top: 5em;
-    width: calc(100% - 10em);
-  }
-  .drop-shadow > span {
-    font-size: 4em;
   }
 }
 </style>
