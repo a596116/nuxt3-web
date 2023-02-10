@@ -1,9 +1,10 @@
 <script lang="ts" setup>
 export interface IMenuItem {
-  type: 'link' | 'button'
-  text: string
+  type: 'link' | 'menu'
+  text?: string
   href?: any
   route?: any
+  menu?: IMenuItem[]
 }
 
 const { t } = useLang()
@@ -12,6 +13,15 @@ const menus = computed((): IMenuItem[] => [
   { type: 'link', text: t('pages.about.nav'), route: { name: 'about' } },
   { type: 'link', text: t('pages.collection.nav'), route: { name: 'collection' } },
   { type: 'link', text: t('pages.articles.nav'), route: { name: 'articles' } },
+  {
+    type: 'menu',
+    text: '網站',
+    menu: [
+      { type: 'link', text: '博客', href: 'https://wanghaodai.com/' },
+      { type: 'link', text: '後台管理系統', href: 'https://haodai-web.web.app/admin' },
+      { type: 'link', text: '網頁音樂', href: 'https://haodai-web.web.app/music' },
+    ],
+  },
 ])
 </script>
 
@@ -31,13 +41,11 @@ const menus = computed((): IMenuItem[] => [
                 class="capitalize hover:text-slate-900 hover:no-underline hover:dark:text-white"
                 >{{ item.text }}</Anchor
               >
-              <Button
-                v-else-if="item.type === 'button'"
+              <MenuDropDown
+                v-else-if="item.type === 'menu'"
                 :text="item.text"
-                size="xs"
                 class="font-extrabold capitalize"
-                :to="item.route ? item.route : undefined"
-                :href="item.href ? item.href : undefined" />
+                :menu="item.menu" />
             </li>
           </ul>
         </nav>
@@ -74,13 +82,12 @@ const menus = computed((): IMenuItem[] => [
                   class="flex-1 capitalize hover:no-underline"
                   >{{ item.text }}</Anchor
                 >
-                <Button
-                  v-else-if="item.type === 'button'"
+                <MenuDropDown
+                  v-else-if="item.type === 'menu'"
                   :text="item.text"
-                  size="xs"
-                  class="flex-1 font-extrabold capitalize"
-                  :to="item.route ? item.route : undefined"
-                  :href="item.href ? item.href : undefined" />
+                  class="font-extrabold capitalize"
+                  :menu="item.menu"
+                  type="select-box" />
               </li>
             </ul>
           </nav>
