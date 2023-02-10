@@ -15,11 +15,11 @@ const menus = computed((): IMenuItem[] => [
   { type: 'link', text: t('pages.articles.nav'), route: { name: 'articles' } },
   {
     type: 'menu',
-    text: '網站',
+    text: t('pages.web.nav'),
     menu: [
-      { type: 'link', text: '博客', href: 'https://wanghaodai.com/' },
-      { type: 'link', text: '後台管理系統', href: 'https://haodai-web.web.app/admin' },
-      { type: 'link', text: '網頁音樂', href: 'https://haodai-web.web.app/music' },
+      { type: 'link', text: t('pages.web.pages.1.title'), href: t('pages.web.pages.1.url') },
+      { type: 'link', text: t('pages.web.pages.2.title'), href: t('pages.web.pages.1.url') },
+      { type: 'link', text: t('pages.web.pages.3.title'), href: t('pages.web.pages.1.url') },
     ],
   },
 ])

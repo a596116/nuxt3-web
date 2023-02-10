@@ -44,7 +44,15 @@
       "title": "關於",
       "description": "這是一個關於頁面"
     },
-    "dashboard": { "nav": "仪表盘", "title": "仪表盘", "index": { "nav": "主页", "title": "主页" } }
+    "web": {
+      "nav": "網站",
+      "title": "網站",
+      "pages": {
+        "1": { "title": "博客", "url": "https://wanghaodai.com/" },
+        "2": { "title": "後台管理系統", "url": "https://haodai-web.web.app/admin" },
+        "3": { "title": "網頁音樂", "url": "https://haodai-web.web.app/music" }
+      }
+    }
   },
   "banners": { "welcome": "你好, 欢迎来到 %{app_name}!" },
   "others": { "learn_more": "了解更多", "copy": "複製", "enabled": "啟用", "disabled": "禁用" }
