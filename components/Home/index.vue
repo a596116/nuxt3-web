@@ -11,6 +11,7 @@
           <div class="title">
             <span class="text-5xl md:text-7xl">HaoDai </span>
             <span class="mt-4 text-2xl">熱愛前端的小白</span>
+            <Anchor text="關於我 →" :to="{ name: 'about' }" class="mt-5 border-b-2" />
           </div>
         </div>
       </li>
