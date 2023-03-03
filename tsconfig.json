@@ -4,6 +4,7 @@
   "compilerOptions": {
     // "strict": true,
     // "skipLibCheck": true,
+    "outDir": "./.output/public/",
     "types": ["@pinia/nuxt", "@intlify/nuxt3"]
   }
 }
