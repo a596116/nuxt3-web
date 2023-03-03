@@ -3,6 +3,7 @@ import Components from 'unplugin-vue-components/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 
 export default defineNuxtConfig({
+
     ssr: true,
 
     // typescripts
@@ -37,6 +38,7 @@ export default defineNuxtConfig({
         '@nuxt/content',
         '@intlify/nuxt3',
     ],
+
 
 
     // auto import components
@@ -77,6 +79,7 @@ export default defineNuxtConfig({
         define: {
             // __BUILD_TIME__: JSON.stringify(dayjs().format('YYYY/MM/DD HH:mm')),
         },
+
         plugins: [
             Components({
                 dts: true,
