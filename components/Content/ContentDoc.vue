@@ -1,12 +1,12 @@
 <template>
   <ContentDoc>
     <template #default="{ doc }">
-      <PageHeader>
-        <PageTitle :text="doc.title" />
-      </PageHeader>
-      <PageSection>
+      <Header>
+        <Title :text="doc.title" />
+      </Header>
+      <Section>
         <ContentRenderer :value="doc" />
-      </PageSection>
+      </Section>
     </template>
     <template #empty>
       <h1>Post in empty</h1>

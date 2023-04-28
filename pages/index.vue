@@ -18,13 +18,9 @@ useHead(() => ({
 </script>
 
 <template>
-  <PageWrapper class="flex flex-1" :top="false">
-    <!-- <PageSection class="flex flex-1 flex-col items-center"> -->
-    <!-- <div class="md:w-5/8 z-10 flex flex-1 flex-col"> -->
+  <Wrapper class="flex flex-1" :top="false">
     <Home />
-    <!-- </div> -->
-    <!-- </PageSection> -->
-  </PageWrapper>
+  </Wrapper>
 </template>
 
 <style lang="scss" scoped></style>

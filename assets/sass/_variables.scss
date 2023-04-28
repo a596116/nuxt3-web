@@ -92,3 +92,29 @@ $warningColor: #f4cd00 !default;
 $warningTitleColor: #{darken(#f4cd00, 10%)} !default;
 $dangerColor: #f55 !default;
 $dangerTitleColor: #{darken(#f55, 10%)} !default;
+
+:root {
+  // 變更 element plus 主色
+  --el-color-primary: #98ae87;
+  --blue-primary-50: #f8fbff;
+  --blue-primary-100: #e3f1ff;
+  --blue-primary-400: #464f5e;
+  --blue-primary-500: #98ae87;
+  --table-row-bg: #e9f6fc;
+  // --table-row-bg: rgba(200, 220, 241, 0.2);
+  --table-expand-row-bg: #f8fbff;
+  --table-expand-hover-row-bg: #c8c8c8;
+  // --search-input-bg: rgba(200, 220, 241, 0.2);
+  --search-input-bg: rgba(232, 240, 254, 0.6);
+  --form-input-bg: #f5f7fa;
+  --form-view-bg: #ffffff;
+  --el-border-radius-base: 8px;
+  --el-border-color-extra-light: #b3dff4;
+  --el-color-danger: #f36666;
+  --el-color-success: #48b981;
+  --el-color-warning: #ffcf73;
+  --el-color-info: #b7b7b7;
+  --primary-text-color: #252525;
+  --form-editable-bg: #f5f7fa;
+  --el-disabled-bg-color: #ececec;
+}

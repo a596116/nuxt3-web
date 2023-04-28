@@ -20,9 +20,9 @@ useHead(() => ({
 </script>
 
 <template>
-  <PageWrapper>
+  <Wrapper>
     <ContentList v-slot="{ list }" path="/articles">
-      <PageSection v-for="article in list" :key="article._path">
+      <Section v-for="article in list" :key="article._path">
         <div
           class="flex space-x-6 rounded border border-gray-900/10 p-5 hover:no-underline dark:border-gray-50/[0.2]">
           <div class="mt-1 w-[100px] text-right text-slate-600 dark:text-gray-400">
@@ -51,7 +51,7 @@ useHead(() => ({
             </div>
           </Anchor>
         </div>
-      </PageSection>
+      </Section>
     </ContentList>
-  </PageWrapper>
+  </Wrapper>
 </template>

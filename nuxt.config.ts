@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import Components from 'unplugin-vue-components/vite'
-import IconsResolver from 'unplugin-icons/resolver'
+
+import { createRuntimeConfig, createViteConfig } from "./build"
 
 export default defineNuxtConfig({
 
@@ -18,17 +18,16 @@ export default defineNuxtConfig({
         },
     },
 
-    // plugins
-    // plugins: ['~/plugins/element-plus'],
-
+    components: [
+        {
+            global: true,
+            path: '~/components/',
+            pathPrefix: false,
+            extensions: ['.vue'],
+        }
+    ],
     // css
-    css: ['~/assets/sass/app.scss', '~/assets/sass/mode/dark.scss', '~/assets/sass/mode/light.scss'],
-
-
-    // build
-    build: {
-        transpile: ['@headlessui/vue']
-    },
+    css: ['~/assets/sass/app.scss', '~/assets/sass/tailwind.css'],
 
     // modules
     modules: [
@@ -37,12 +36,10 @@ export default defineNuxtConfig({
         'unplugin-icons/nuxt',
         '@nuxt/content',
         '@intlify/nuxt3',
+        '@element-plus/nuxt',
+        'nuxt-lodash',
+        '@vueuse/nuxt',
     ],
-
-
-
-    // auto import components
-    components: true,
 
     // app config
     app: {
@@ -73,30 +70,11 @@ export default defineNuxtConfig({
             availableLocales: ['en', 'zh'],
         },
     },
-    // vite
-    vite: {
-        // need add declare from xxx.d.ts
-        define: {
-            // __BUILD_TIME__: JSON.stringify(dayjs().format('YYYY/MM/DD HH:mm')),
-        },
 
-        plugins: [
-            Components({
-                dts: true,
-                resolvers: [
-                    IconsResolver({
-                        prefix: 'Icon',
-                    }),],
-            }),
-        ],
-        // 解决在开发模式下降低 naive-ui 引起的打包缓慢
-        // optimizeDeps: {
-        //     include:
-        //         process.env.NODE_ENV === 'development'
-        //             ? ['naive-ui', 'vueuc', 'date-fns-tz/esm/formatInTimeZone']
-        //             : [],
-        // },
-    },
+    // vite
+    vite: createViteConfig(),
+
+    runtimeConfig: createRuntimeConfig(),
 
     // content
     content: {

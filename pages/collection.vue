@@ -20,13 +20,13 @@ useHead(() => ({
 </script>
 
 <template>
-  <PageWrapper>
-    <PageHeader>
-      <PageTitle :text="$t('pages.collection.title')" class="capitalize" />
-    </PageHeader>
-    <PageSection>
+  <Wrapper>
+    <Header>
+      <Title :text="$t('pages.collection.title')" class="capitalize" />
+    </Header>
+    <Section>
       <ContentList v-slot="{ list }" path="/collections">
-        <PageSection v-for="article in list" :key="article._path">
+        <Section v-for="article in list" :key="article._path">
           <div class="links-wrapper">
             <div
               v-for="(group, groupId) in article.links"
@@ -53,10 +53,10 @@ useHead(() => ({
               </div>
             </div>
           </div>
-        </PageSection>
+        </Section>
       </ContentList>
-    </PageSection>
-  </PageWrapper>
+    </Section>
+  </Wrapper>
 </template>
 
 <style lang="scss" scoped>

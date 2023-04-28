@@ -14,12 +14,12 @@ const { data } = await useAsyncData(props.path, () => queryContent(props.path).f
 </script>
 
 <template>
-  <PageWrapper>
-    <PageHeader>
-      <PageTitle :text="pageTitle" class="capitalize" />
-    </PageHeader>
-    <PageSection>
+  <Wrapper>
+    <Header>
+      <Title :text="pageTitle" class="capitalize" />
+    </Header>
+    <Section>
       <ContentRenderer :value="data" />
-    </PageSection>
-  </PageWrapper>
+    </Section>
+  </Wrapper>
 </template>

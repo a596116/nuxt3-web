@@ -3,16 +3,13 @@
     <slot name="app-before" />
     <div id="app-before"></div>
     <div class="flex min-h-screen flex-col">
-      <slot name="header">
-        <PageNavbar />
-      </slot>
       <div class="flex w-full flex-1 flex-col">
         <div class="max-w-8xl relative mx-auto flex h-full w-full flex-1 flex-col">
           <slot />
         </div>
       </div>
       <slot name="footer">
-        <PageFooter />
+        <Footer />
       </slot>
     </div>
     <slot name="app-after" />

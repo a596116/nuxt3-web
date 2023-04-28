@@ -5,7 +5,7 @@ definePageMeta({
 </script>
 
 <template>
-  <PageWrapper class="flex flex-col">
-    <PageContentDoc />
-  </PageWrapper>
+  <Wrapper class="flex flex-col">
+    <ContentDoc />
+  </Wrapper>
 </template>

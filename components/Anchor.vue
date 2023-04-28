@@ -19,18 +19,16 @@ const props = defineProps({
 const href = toRef(props, 'href')
 const to = toRef(props, 'to')
 </script>
-
 <template>
   <NuxtLink
     v-if="to"
-    tag="a"
     :to="to"
-    :class="`transition-colors duration-300 hover:text-gray-900 hover:underline dark:hover:text-white`">
+    class="hover:text-hd-hoverText cursor-pointer outline-none transition-colors duration-300">
     <slot>{{ text }}</slot>
   </NuxtLink>
   <a
     v-else-if="href"
-    :class="`transition-colors duration-300 hover:text-gray-900 hover:underline dark:hover:text-white`"
+    class="hover:text-hd-hoverText cursor-pointer outline-none transition-colors duration-300"
     :href="href"
     target="_blank">
     <slot>{{ text }}</slot>

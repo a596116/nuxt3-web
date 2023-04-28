@@ -15,7 +15,7 @@ export const availableLocales: ILocales = {
     flag: '🇺🇸',
   },
   zh: {
-    name: '簡體中文',
+    name: '繁體中文',
     iso: 'zh',
     flag: '🇹🇼',
   },
