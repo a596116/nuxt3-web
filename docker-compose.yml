@@ -1,0 +1,29 @@
+version: '3.9' # docker compose 解析規則版本
+
+services:
+  jenkins:
+    container_name: 'jenkins'
+    image: jenkins/jenkins:lts
+    restart: always
+    # 重点注意，这里必须跟docker在同一个组
+    user: jenkins:999
+    ports:
+      - '8081:8080'
+      # 根据业务情况，可以不填以下两个
+    volumes:
+      # 数据持久化
+      - ./jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/bin/docker:/usr/bin/docker
+      - /etc/hosts:/etc/hosts
+      - /root/.m2:/root/.m2
+  mysql:
+    image: mysql:8.0.32
+    restart: always
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: sshop
+
+volumes: mysql-data:{} jenkins_home:{}

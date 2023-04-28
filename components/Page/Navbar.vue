@@ -18,8 +18,8 @@ const menus = computed((): IMenuItem[] => [
     text: t('pages.web.nav'),
     menu: [
       { type: 'link', text: t('pages.web.pages.1.title'), href: t('pages.web.pages.1.url') },
-      { type: 'link', text: t('pages.web.pages.2.title'), href: t('pages.web.pages.1.url') },
-      { type: 'link', text: t('pages.web.pages.3.title'), href: t('pages.web.pages.1.url') },
+      { type: 'link', text: t('pages.web.pages.2.title'), href: t('pages.web.pages.2.url') },
+      { type: 'link', text: t('pages.web.pages.3.title'), href: t('pages.web.pages.3.url') },
     ],
   },
 ])

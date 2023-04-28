@@ -1,4 +1,4 @@
-import { resolve } from 'path'
+import path, { resolve } from 'path'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vitest/config'
@@ -15,8 +15,10 @@ export default defineConfig({
     },
     resolve: {
         alias: {
-            '@': resolve(__dirname, '.'),
-        },
+            '@': path.resolve(__dirname, './'),
+            '~': path.resolve(__dirname, './'),
+            '#imports': path.resolve(__dirname, './.nuxt/imports.d.ts')
+        }
     },
     plugins: [
         // auto import vue、vueuse

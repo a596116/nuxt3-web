@@ -13,7 +13,7 @@ export default defineNuxtConfig({
         tsConfig: {
             compilerOptions: {
                 strict: true,
-                types: ['@pinia/nuxt', './type.d.ts'],
+                types: ['@pinia/nuxt', '~/type.d.ts'],
             },
         },
     },

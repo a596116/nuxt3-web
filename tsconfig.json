@@ -5,7 +5,7 @@
     // "strict": true,
     // "skipLibCheck": true,
     "outDir": "./.output/public/",
-      "skipLibCheck": true,
+    "skipLibCheck": true,
     "types": ["@pinia/nuxt", "@intlify/nuxt3"]
   }
 }
