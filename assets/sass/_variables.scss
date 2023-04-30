@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 $MQLarge: 1200px !default;
 $MQIpad: 1023px !default;
 $MQNarrow: 959px !default;
@@ -117,4 +119,76 @@ $dangerTitleColor: #{darken(#f55, 10%)} !default;
   --primary-text-color: #252525;
   --form-editable-bg: #f5f7fa;
   --el-disabled-bg-color: #ececec;
+}
+
+$theme: #2aa0bb;
+$background: #fff;
+$background-dark: #363636;
+$theme-color: $theme;
+$theme-color-lighten: color.adjust($theme-color, $lightness: 20%);
+$theme-color-darken: color.adjust($theme-color, $lightness: -10%);
+$header-height: 48px;
+$footer-height: 64px;
+$animation-duration: 0.2s;
+$animation-function: cubic-bezier(0, 0, 0, 1);
+$common-transition: all $animation-duration $animation-function;
+$z-index-mode-bg: 10;
+$z-index-body: 20;
+$z-index-header: 500;
+$z-index-footer: 30;
+$z-index-notify: 1000;
+$z-index-modal: 999;
+$z-index-dropdown: 999;
+
+// $font-source-han-sans: unset;
+$font-source-han-sans: 'lxgwwenkai', system-ui, monospace;
+
+// $font-source-han-sans: none;
+
+// $font-code: "Source Code Pro", serif;
+$font-code: 'Fira Code', serif;
+
+@mixin mobile {
+  // @if & {
+  //   @at-root body.is-mobile & {
+  //     @content;
+  //   }
+  // } @else {
+  //   @at-root body.is-mobile {
+  //     @content;
+  //   }
+  // }
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin square($size: 100%) {
+  width: $size;
+  height: $size;
+}
+
+$font-size: 18px;
+
+@function f-size($size: 1) {
+  @return $font-size * $size;
+}
+
+@mixin textoverflow($line: 1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-line-clamp: $line;
+}
+
+@mixin dark-mode($is-self: false) {
+  @if $is-self {
+    &.dark-mode {
+      @content;
+    }
+  } @else {
+    @at-root html.dark-mode & {
+      @content;
+    }
+  }
 }

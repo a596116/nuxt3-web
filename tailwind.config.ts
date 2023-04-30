@@ -22,13 +22,13 @@ module.exports = {
         extend: {
             colors: {
                 hd: {
-                    Text: '#495277',
+                    Text: '#3C486B',
                     hoverText: '#A9B598',
-                    Green: '#98AE87',
-                    hoverGreen: '#AABE99',
-                    clickGreen: '#709657',
-                    Yellow: '#F1E390',
-                    Bg: '#F4F4F4'
+                    Green: '#C9DBB2',
+                    hoverGreen: '#BFCCB5',
+                    clickGreen: '#AAC8A7',
+                    Yellow: '#FFEEB3',
+                    Bg: '#F4F5FE'
                 }
             },
             animation: {

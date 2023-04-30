@@ -26,7 +26,7 @@ const toggleDrawer = () => (showDrawer.value = !showDrawer.value)
             <Anchor
               to="/"
               class="logo absolute left-1/2 -translate-x-[50%] lg:relative lg:left-0 lg:translate-x-0">
-              <img src="~/assets/img/logo.png" alt="浩呆" class="text-primary-500 mx-5 w-10" />
+              <svg-icon name="logo" class="h-14 w-28"></svg-icon>
             </Anchor>
           </slot>
           <!-- menu -->

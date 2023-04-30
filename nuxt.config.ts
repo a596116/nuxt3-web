@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     // typescripts
     typescript: {
         strict: true,
-        typeCheck: true,
+        typeCheck: false,
         tsConfig: {
             compilerOptions: {
                 strict: true,
@@ -27,18 +27,25 @@ export default defineNuxtConfig({
         }
     ],
     // css
-    css: ['~/assets/sass/app.scss', '~/assets/sass/tailwind.css'],
+    css: ['~/assets/sass/app.scss', '~/assets/sass/tailwind.css', 'animate.css/animate.min.css'],
 
+
+    build: {
+        transpile: ["vue-notion", "prismjs"],
+    },
+    telemetry: false,
     // modules
     modules: [
         '@nuxtjs/tailwindcss',
         '@pinia/nuxt',
+        '@pinia-plugin-persistedstate/nuxt',
         'unplugin-icons/nuxt',
         '@nuxt/content',
         '@intlify/nuxt3',
         '@element-plus/nuxt',
         'nuxt-lodash',
         '@vueuse/nuxt',
+        // ["vue3-notion/nuxt", { css: true }]
     ],
 
     // app config
@@ -74,11 +81,11 @@ export default defineNuxtConfig({
     // vite
     vite: createViteConfig(),
 
-    runtimeConfig: createRuntimeConfig(),
+    // runtimeConfig: createRuntimeConfig(),
 
     // content
     content: {
-        documentDriven: true,
+        documentDriven: false,
         markdown: {
             mdc: true,
         },

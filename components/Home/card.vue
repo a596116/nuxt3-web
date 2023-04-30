@@ -144,40 +144,21 @@ const skills = [
 }
 
 .card .inner_part {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 0 0 30px;
-  height: 400px;
-  width: 65%;
-  position: absolute;
-  left: 35%;
+  @apply absolute left-[35%] flex h-[400px] w-[65%] items-center justify-center py-0 pl-[30px] pr-0;
   @media (max-width: 768px) {
-    padding: 0;
-    height: 500px;
-    width: 100%;
-    left: 0;
+    @apply left-0 h-[500px] w-full p-0;
   }
 }
 
 #slideImg:checked ~ .inner_part {
-  padding: 0;
-  transition: 0.1s ease-in;
+  @apply p-0 transition-[0.1s] duration-[ease-in];
 }
 
 .content {
-  position: relative;
-  padding: 0 20px 0 35px;
-  width: 530px;
-  height: 80%;
-  margin-left: 50px;
-  opacity: 0;
-  transition: 0.6s;
-  display: flex;
-  flex-direction: column;
+  @apply relative ml-[50px] flex h-4/5 w-[530px] flex-col py-0 pl-[35px] pr-5 opacity-0 transition-[0.6s];
+
   @media (max-width: 768px) {
-    padding: 0 10px 0 10px;
-    top: -40px;
+    @apply -top-10 px-2.5 py-0;
   }
 }
 
@@ -188,62 +169,28 @@ const skills = [
 #slide_1:checked ~ .inner_part .content_1,
 #slide_2:checked ~ .inner_part .content_2,
 #slide_3:checked ~ .inner_part .content_3 {
-  opacity: 1;
-  margin-left: 0;
-  z-index: 10;
-  transition-delay: 0.3s;
+  @apply z-10 ml-0 opacity-100 delay-[0.3s];
 }
 
 .content .title {
-  height: 15%;
-  font-weight: 700;
-  color: #0d0925;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  letter-spacing: 5px;
-  margin: 0 0 10px 0;
+  @apply text-hd-Text mx-0 mb-2.5 mt-0 flex h-[15%] items-center justify-center font-bold tracking-[5px];
 }
-
 .content .text {
-  height: 70%;
-  font-size: 16px;
-  color: #4e4a67;
-  margin: 0 auto 30px auto;
-  line-height: 1.5em;
-  text-align: justify;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  @apply mx-auto mb-[30px] mt-0 flex h-[70%] flex-col justify-around text-justify text-base leading-[1.5em] text-[#4e4a67];
 }
 
 .content .text .skill {
-  width: 100%;
-  height: 100%;
-  padding: 0 30px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 24px;
+  @apply flex h-full w-full flex-wrap items-center justify-around gap-6 px-[30px] py-0;
 
   img {
-    width: 50px;
-    height: 50px;
-    padding: 4px;
-    border-radius: 8px;
-    cursor: pointer;
+    @apply h-[50px] w-[50px] cursor-pointer rounded-lg p-1;
   }
 }
 .slider {
-  position: absolute;
-  bottom: 25px;
-  left: 65%;
-  transform: translateX(-50%);
-  z-index: 11;
+  @apply absolute bottom-[25px] left-[65%] z-[11] -translate-x-2/4;
+
   @media (max-width: 768px) {
-    left: 50%;
-    bottom: 15px;
+    @apply bottom-[15px] left-2/4;
   }
 }
 
@@ -252,39 +199,20 @@ const skills = [
 }
 
 .slider .slide {
-  position: relative;
-  height: 12px;
-  width: 50px;
-  background: #afafaf;
-  border-radius: 5px;
-  display: inline-flex;
-  margin: 0 3px;
-  cursor: pointer;
+  @apply relative mx-[3px] my-0 inline-flex h-3 w-[50px] cursor-pointer rounded-[5px] bg-[#afafaf];
   @media (max-width: 768px) {
-    width: 30px;
-    margin: 0 5px;
+    @apply mx-[5px] my-0 w-[30px];
   }
 }
 
 .slider .slide:before {
-  position: absolute;
-  content: '';
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: -100%;
-  background: #fdcb6e;
-  border-radius: 10px;
-  transform: scaleX(0);
-  transition: transform 0.6s;
-  transform-origin: left;
+  @apply bg-hd-Yellow absolute left-0 top-0 h-full w-[-100%] origin-left scale-x-0 rounded-[10px] transition-transform duration-[0.6s] content-[''];
 }
 
 #slide_1:checked ~ .slider .slide_1:before,
 #slide_2:checked ~ .slider .slide_2:before,
 #slide_3:checked ~ .slider .slide_3:before {
-  transform: scaleX(1);
-  width: 100%;
+  @apply w-full scale-x-100;
 }
 
 input {
@@ -369,7 +297,7 @@ input {
 }
 
 .btn-draw {
-  @include btn-draw(#2d3d67, #e4e4e2, 2px);
+  @include btn-draw(#7c96ab, #e4e4e2, 2px);
   font-size: 1em;
   text-transform: uppercase;
   text-decoration: none;

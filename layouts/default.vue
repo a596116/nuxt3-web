@@ -2,7 +2,7 @@
   <div>
     <slot name="app-before" />
     <div id="app-before"></div>
-    <div class="flex min-h-screen flex-col">
+    <div class="flex min-h-screen w-full flex-col">
       <div class="flex w-full flex-1 flex-col">
         <div class="max-w-8xl relative mx-auto flex h-full w-full flex-1 flex-col">
           <slot />
@@ -12,6 +12,8 @@
         <Footer />
       </slot>
     </div>
+    <el-backtop
+      class="hover:bg-hd-hoverGreen bottom-20 right-10 z-[50] duration-300 hover:text-white sm:bottom-[120px] sm:right-[80px]" />
     <slot name="app-after" />
     <div id="app-after"></div>
   </div>

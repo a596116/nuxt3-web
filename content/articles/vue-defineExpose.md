@@ -7,13 +7,15 @@ tags:
   - vue
 ---
 **这个方法是vue3 3.2+ 版本新增的，大概意思就是 在 `<script setup>` 组件中明确要暴露出去的属性，使用 `defineExpose` 编译器宏**
-## 子組件
+
+##s 子組件
 
 :::div{class="py-4"}
   ::tabs
     :::tab{name="vue" title="Vue"}
       ```vue
-      <script setup>
+      
+      <script setup lang="ts">
       import {ref, defineExpose} from 'vue'
       const a=ref('子組件屬性')
       const f=ref(()=>{
@@ -26,32 +28,33 @@ tags:
       })
       </script>
       ```
-      :::
+    :::
   ::
 :::
+
 
 ## 父組件
 
 :::div{class="py-4"}
   ::tabs
     :::tab{name="vue" title="Vue"}
-```vue
-<template>
-    <ChildComponent ref="childComponentRef" />
-</template>
+      ```vue
+      <template late>
+        <ChildComponent ref="childComponentRef" />
+      </template>
 
-<script setup>
-import { ref, onMounted } from 'vue'
+      <script setup lang="ts">
+      import { ref, onMounted } from 'vue'
 
-const childComponentRef = ref()
+      const childComponentRef = ref()
 
-onMounted(() => {
-    const valueA = childComponentRef.value.a;
-    console.log(valueA)
-		childComponentRef.value.f
-})
-</script>
-```
-:::
+      onMounted(() => {
+          const valueA = childComponentRef.value.a;
+          console.log(valueA)
+          childComponentRef.value.f
+      })
+      </script>
+      ```
+    :::
   ::
 :::

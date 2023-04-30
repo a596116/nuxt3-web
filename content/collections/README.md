@@ -12,10 +12,6 @@ links:
         url: https://wanghaodai.com/
         img: https://s2.loli.net/2023/02/08/KjLxycGCJoOM43s.png
         desc: VuePress搭建的博客網站，存放學習資料
-      - sitename: 網頁音樂播放器
-        url: https://haodai-web.web.app/music
-        img: https://s2.loli.net/2023/02/08/OWKD85XP3qSE7jw.png
-        desc: 使用JS原生方法製作的楓之谷音樂播放器
       - sitename: 畢業專題介紹
         url: https://puds-12564.web.app/home
         img: https://s2.loli.net/2023/02/08/M6BH5PkFOsbC2TQ.png

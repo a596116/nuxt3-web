@@ -1,9 +1,13 @@
 <template>
-  <div class="introduce" data-state="#about">
+  <div
+    class="introduce relative z-[1] m-auto flex h-[450px] w-[90%] flex-col overflow-y-auto overflow-x-hidden rounded-2xl bg-white shadow-[10px-0px-50px-rgba(0,0,0,0.5)] transition-[0.3s] md:h-[500px] md:w-[360px] md:overflow-y-hidden"
+    data-state="#about">
     <div class="introduce-header">
       <div
         class="introduce-cover"
-        style="background-image: url('https://s2.loli.net/2023/02/09/rtksfIcjTGBgJml.jpg')"></div>
+        style="
+          background-image: url('https://media.altphotos.com/cache/images/2018/09/18/06/752/paper-table-sentences-.jpg');
+        "></div>
       <img class="introduce-avatar" src="https://s2.loli.net/2023/02/09/HcOiTjFn1KMCovu.jpg" />
 
       <h1 class="introduce-fullname">
@@ -20,12 +24,12 @@
           </p>
         </div>
         <div class="introduce-social">
-          <a href="https://line.me/ti/p/YXi16BOO8V" target="_blank" class="btn">
-            <img src="https://s2.loli.net/2023/02/09/fO9pq37diRKVx2A.png" alt="haodai" />
-          </a>
-          <a href="https://github.com/a596116" target="_blank" class="btn">
-            <img src="https://s2.loli.net/2023/02/09/uDoTsgOjPf7REm4.png" alt="haodai" />
-          </a>
+          <Anchor href="https://line.me/ti/p/YXi16BOO8V">
+            <svg-icon name="line"></svg-icon>
+          </Anchor>
+          <Anchor href="https://github.com/a596116">
+            <svg-icon name="github"></svg-icon>
+          </Anchor>
         </div>
       </div>
       <div class="introduce-section" id="experience">
@@ -63,14 +67,18 @@
         <div class="introduce-content">
           <div class="introduce-subtitle">{{ t('pages.index.contact') }}</div>
           <div class="introduce-contact-wrapper">
-            <div class="introduce-contact btn">
-              <img src="https://s2.loli.net/2023/02/09/nMSGmlgHs648bzU.png" alt="haodai" />
-              <a href="tel:0988640301" target="_blank">0988640301 </a>
+            <div class="introduce-contact">
+              <svg-icon
+                name="phone"
+                class="mr-3 h-8 w-8 border-r border-r-[#dfe2ec] pr-3"></svg-icon>
+              <Anchor href="tel:0988640301" text="0988640301" />
             </div>
             <div class="introduce-contact"></div>
-            <div class="introduce-contact btn">
-              <img src="https://s2.loli.net/2023/02/09/tnVl21siZNzp3Bk.png" alt="haodai" />
-              <a href="mailto:a596116@gmail.com" target="_blank"> a596116@gmail.com</a>
+            <div class="introduce-contact">
+              <svg-icon
+                name="mail"
+                class="mr-3 h-8 w-8 border-r border-r-[#dfe2ec] pr-3"></svg-icon>
+              <Anchor href="mailto:a596116@gmail.com" text="a596116@gmail.com" />
             </div>
           </div>
         </div>
@@ -113,217 +121,98 @@ const handleButtonClick = (e: any) => {
 ::-webkit-scrollbar {
   display: none;
 }
-.introduce {
-  width: 360px;
-  height: 500px !important;
-  margin: auto;
-  overflow-y: hidden;
-  position: relative;
-  z-index: 1;
-  overflow-x: hidden;
-  background-color: rgb(255, 255, 255);
-  display: flex;
-  transition: 0.3s;
-  flex-direction: column;
-  border-radius: 16px;
-  box-shadow: 10px 0 50px rgba(0, 0, 0, 0.5);
-  @media (max-width: 768px) {
-    width: 90%;
-    height: 450px !important;
-    overflow-y: auto;
-  }
-}
 
 .introduce.is-active {
   .introduce-header {
-    height: 80px;
+    @apply h-20;
   }
 
   .introduce-cover {
-    height: 100px;
-    top: -50px;
+    @apply -top-[50px] h-24;
   }
 
   .introduce-avatar {
-    transform: none;
-    left: 20px;
-    width: 50px;
-    height: 50px;
-    bottom: 10px;
+    @apply bottom-[10px] left-5 h-[50px] w-[50px] transform-none;
   }
 
   .introduce-fullname,
   .introduce-jobtitle {
-    left: 86px;
-    transform: none;
+    @apply left-[86px] transform-none;
   }
 
   .introduce-fullname {
-    bottom: 10px;
-    font-size: 19px;
+    @apply bottom-[10px] text-lg;
   }
 
   .introduce-jobtitle {
-    bottom: 16px;
-    letter-spacing: 1px;
-    font-size: 10px;
+    @apply bottom-4 text-xs leading-[1px];
   }
 }
 
 .introduce-header {
-  position: relative;
-  display: flex;
-  height: 200px;
-  flex-shrink: 0;
-  width: 100%;
-  transition: 0.3s;
-
+  @apply relative flex h-[200px] w-full shrink-0 transition-[0.3s];
   * {
     transition: 0.3s;
   }
 }
 
 .introduce-cover {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  height: 160px;
-  top: -20%;
-  left: 0;
-  will-change: top;
-  background-size: cover;
-  background-position: center;
-  filter: blur(3px);
-  transform: scale(1.2);
-  transition: 0.5s;
+  @apply absolute  left-0 top-[-20%] h-40 w-full scale-[1.2] bg-cover bg-center blur-[1px] transition-[0.5s] will-change-[top];
 }
 
 .introduce-avatar {
-  width: 100px;
-  height: 100px;
-  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 50%;
-  object-position: center;
-  object-fit: cover;
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%) translateY(-64px);
+  @apply absolute -bottom-2.5 left-2/4 h-[100px] w-[100px] -translate-x-2/4 -translate-y-16 rounded-[50%] object-cover object-center shadow-[0_8px_8px_rgba(0,0,0,0.2)];
 }
 
 .introduce-fullname {
-  position: absolute;
-  bottom: -30px;
-  font-size: 22px;
-  font-weight: 700;
-  text-align: center;
-  color: #2d3d67;
-  white-space: nowrap;
-  transform: translateY(-10px) translateX(-50%);
-  left: 50%;
+  @apply text-hd-Text absolute bottom-[-30px] left-2/4 -translate-x-2/4 -translate-y-2.5 whitespace-nowrap text-center text-[22px] font-bold;
 }
 
 .introduce-jobtitle {
-  position: absolute;
-  bottom: 0;
-  font-size: 11px;
-  white-space: nowrap;
-  font-weight: 500;
-  opacity: 0.7;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin: 0;
-  left: 50%;
-  transform: translateX(-50%) translateY(-7px);
+  @apply absolute bottom-0 left-2/4 m-0 -translate-x-2/4 translate-y-[-7px] whitespace-nowrap text-[11px] font-medium uppercase tracking-[1.5px] opacity-70;
 }
 
 .introduce-main {
-  position: relative;
-  flex: 1;
-  display: flex;
-  padding-top: 10px;
-  flex-direction: column;
+  @apply relative flex flex-[1] flex-col pt-2.5;
 }
 
 .introduce-subtitle {
-  font-weight: 700;
-  font-size: 13px;
-  margin-bottom: 8px;
-  color: #2b2c48;
+  @apply mb-2 text-[13px] font-bold text-[#2b2c48];
 }
 
 .introduce-content {
-  padding: 20px;
+  @apply p-5;
 }
 
 .introduce-desc {
-  line-height: 1.6;
-  color: #636b6f;
-  font-size: 14px;
-  margin: 0;
-  font-weight: 400;
+  @apply m-0 text-sm font-normal leading-[1.6] text-[#636b6f];
 }
 
 .introduce-social {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 20px;
-  margin-bottom: 30px;
+  @apply mb-[30px] flex items-center justify-center px-5 py-0;
   img {
-    filter: invert(61%) sepia(10%) saturate(468%) hue-rotate(160deg) brightness(96%) contrast(87%);
-    width: 16px;
-    display: block;
-    transition: 0.3s;
+    @apply block w-4 brightness-[96%] contrast-[87%] hue-rotate-[160deg] invert-[61%] saturate-[468%] sepia-[10%] transition-[0.3s];
   }
   a {
-    height: 32px;
-    width: 32px;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.3s;
-    background-color: #5d85c10d;
-    border-radius: 50%;
-    margin-right: 10px;
+    @apply mr-2.5 inline-flex h-8 w-8 items-center justify-center rounded-[50%] bg-[#5d85c10d] transition-[0.3s] last:mr-0;
 
     &:hover img {
-      filter: invert(64%) sepia(5%) saturate(5978%) hue-rotate(185deg) brightness(80%) contrast(86%);
-    }
-
-    &:last-child {
-      margin-right: 0;
+      @apply brightness-[80%] contrast-[86%] hue-rotate-[185deg] invert-[64%] saturate-[5978%] sepia-[5%];
     }
   }
 }
 
 .introduce-buttons {
-  display: flex;
-  background-color: #fff;
-  margin-top: auto;
-  position: sticky;
-  bottom: 0;
-  left: 0;
+  @apply sticky bottom-0 left-0 mt-auto flex bg-white;
 
   button {
-    flex: 1 1 auto;
-    user-select: none;
+    @apply text-hd-Text flex-auto cursor-pointer select-none border-0 border-b-[3px] border-solid border-b-transparent px-[5px] py-[15px] text-[13px] font-medium transition-[0.3s];
     background: 0;
-    font-size: 13px;
-    border: 0;
-    padding: 15px 5px;
-    cursor: pointer;
-    color: #5c5c6d;
-    transition: 0.3s;
-    font-weight: 500;
     outline: 0;
-    border-bottom: 3px solid transparent;
 
     &.is-active,
     &:hover {
-      color: #2b2c48;
-      border-bottom: 3px solid #fdcb6e;
+      @apply border-b-hd-Yellow text-hd-Text border-b-[3px] border-solid;
       background: linear-gradient(
         to bottom,
         rgba(127, 199, 231, 0) 0%,
@@ -335,10 +224,9 @@ const handleButtonClick = (e: any) => {
 }
 
 .introduce-section {
-  display: none;
+  @apply hidden;
   &.is-active {
-    display: block;
-    animation: fadeIn 0.6s both;
+    @apply block animate-[fadeIn_0.6s_both];
   }
 }
 
@@ -353,87 +241,34 @@ const handleButtonClick = (e: any) => {
 }
 
 .introduce-timeline {
-  margin-top: 30px;
-  position: relative;
+  @apply relative mt-[30px] after:absolute after:left-[42px] after:top-0 after:h-full after:w-0.5 after:content-[''];
   &:after {
     background: linear-gradient(to top, rgba(134, 214, 243, 0) 0%, #fdcb6e 100%);
-    content: '';
-    left: 42px;
-    width: 2px;
-    top: 0;
-    height: 100%;
-    position: absolute;
-    content: '';
   }
 }
 
 .introduce-item {
-  position: relative;
-  padding-left: 60px;
-  padding-right: 20px;
-  padding-bottom: 30px;
-  z-index: 1;
-  &:last-child {
-    padding-bottom: 5px;
-  }
-
+  @apply relative z-[1] pb-[30px] pl-[60px] pr-5 after:absolute after:left-[37px] after:top-0 after:h-2 after:w-2.5 after:rounded-[50%] after:border-2 after:border-solid after:border-white after:indent-[-35px] after:text-[11px] after:leading-[0.6] after:text-[rgba(#868686,0.7)] after:content-[attr(data-year)] last:pb-[5px];
   &:after {
-    content: attr(data-year);
-    width: 10px;
-    position: absolute;
-    top: 0;
-    left: 37px;
-    width: 8px;
-    height: 8px;
-    line-height: 0.6;
-    border: 2px solid #fff;
-    font-size: 11px;
-    text-indent: -35px;
-    border-radius: 50%;
-    color: rgba(#868686, 0.7);
     background: linear-gradient(to bottom, lighten(#fdcb6e, 20%) 0%, #fdcb6e 100%);
   }
 }
 
 .introduce-item-title {
-  font-weight: 500;
-  font-size: 14px;
-  margin-bottom: 5px;
-  color: #2b2c48;
+  @apply mb-[5px] text-sm font-medium text-[#2b2c48];
 }
-
 .introduce-item-desc {
-  font-size: 13px;
-  color: #6f6f7b;
-  line-height: 1.5;
+  @apply text-[13px] leading-normal text-[#6f6f7b];
 }
-
 .introduce-contact-wrapper {
-  margin-top: 40px;
+  @apply mt-10;
 }
 
 .introduce-contact {
-  display: flex;
-  align-items: center;
-  font-size: 16px;
-  color: #6f6f7b;
-  line-height: 1.6;
-  border-radius: 6px;
-  padding: 2px 4px;
-  cursor: pointer;
+  @apply flex cursor-pointer items-center rounded-md px-1 py-0.5 text-base leading-[1.6] text-[#6f6f7b];
 
   & + & {
-    margin-top: 16px;
-  }
-
-  img {
-    flex-shrink: 0;
-    // width: 30px;
-    height: 24px;
-    margin-right: 12px;
-    transition: 0.3s;
-    padding-right: 12px;
-    border-right: 1px solid #dfe2ec;
+    @apply mt-4;
   }
 }
 </style>

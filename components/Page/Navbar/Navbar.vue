@@ -12,7 +12,7 @@ const { t } = useLang()
 const menus = computed((): IMenuItem[] => [
   { type: 'link', text: t('pages.about.nav'), route: { name: 'about' } },
   { type: 'link', text: t('pages.collection.nav'), route: { name: 'collection' } },
-  { type: 'link', text: t('pages.articles.nav'), route: { name: 'articles' } },
+  { type: 'link', text: 'Post', route: { name: 'posts' } },
   { type: 'link', text: 'Music', route: { name: 'music' } },
   {
     type: 'menu',
@@ -20,7 +20,6 @@ const menus = computed((): IMenuItem[] => [
     menu: [
       { type: 'link', text: t('pages.web.pages.1.title'), href: t('pages.web.pages.1.url') },
       { type: 'link', text: t('pages.web.pages.2.title'), href: t('pages.web.pages.2.url') },
-      { type: 'link', text: t('pages.web.pages.3.title'), href: t('pages.web.pages.3.url') },
     ],
   },
 ])
