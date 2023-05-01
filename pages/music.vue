@@ -1,5 +1,5 @@
 <template>
-  <Wrapper class="bg-hd-Bg flex max-h-screen flex-col" :top="false">
+  <Wrapper class="bg-hd-Bg pt-[120px] max-lg:pt-[60px]" :top="false">
     <client-only>
       <MusicContainer />
     </client-only>
@@ -7,6 +7,9 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: 'music',
+})
 useHead(() => ({
   title: 'Music',
   meta: [

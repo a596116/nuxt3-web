@@ -1,31 +1,33 @@
 <template>
-  <Wrapper class="bg-hd-Bg min-h-screen justify-center px-40">
-    <span v-if="pending || error">Loading...</span>
-    <SelectRadio v-model="state.tag" :lists="tagList" />
-    <div>
-      <section
+  <Wrapper class="bg-hd-Bg flex min-h-screen flex-1 justify-center">
+    <section class="w-[60%] max-md:w-[90%]">
+      <span v-if="pending || error">Loading...</span>
+      <SelectRadio v-model="state.tag" :lists="tagList" />
+      <Anchor
         v-for="(post, index) in state.tag == 'all' ? data?.posts : data?.postsByTag.get(state.tag)"
-        :key="index">
-        <div class="my-4 flex space-x-6 rounded border p-5 hover:no-underline">
-          <div class="mt-1 w-[100px] text-right">
-            <div>{{ post.Date }}</div>
-          </div>
-          <Anchor
-            class="flex w-[calc(100%-100px)] cursor-pointer flex-col p-4 transition hover:bg-gray-50 hover:bg-opacity-10 sm:rounded-2xl md:col-span-3 md:mx-0"
-            :to="`/posts/${post.slug}`">
-            <div class="text-xl font-semibold">
-              {{ post.Title }}
-            </div>
-            <div class="flex">
-              <section class="text-primary-500 text-hd-Green flex items-center space-x-1 text-sm">
-                <span>{{ $t('others.learn_more') }}</span>
-                <icon:ic:baseline-arrow-right-alt class="text-sm" />
-              </section>
-            </div>
-          </Anchor>
+        :key="index"
+        class="relative my-6 flex w-full flex-wrap justify-between border p-4 py-6 duration-300 hover:-translate-y-1 hover:shadow-md max-sm:flex-col"
+        :to="`/posts/${post.slug}`">
+        <div class="mt-1 min-w-[100px] text-right max-sm:border-b">
+          <div>{{ post.Date }}</div>
         </div>
-      </section>
-    </div>
+        <div class="flex flex-1 flex-col gap-1 px-4 max-sm:my-4">
+          <span class="text-xl font-semibold">{{ post.Title }}</span>
+          <span class="text-sm">{{ post.desc }}</span>
+        </div>
+        <div class="">
+          <el-tag
+            v-for="(item, index) in post.Tags"
+            :key="index"
+            type="success"
+            class="mx-1"
+            effect="plain"
+            round
+            >{{ item }}
+          </el-tag>
+        </div>
+      </Anchor>
+    </section>
   </Wrapper>
 </template>
 

@@ -7,7 +7,7 @@ const toggleDrawer = () => (showDrawer.value = !showDrawer.value)
 </script>
 
 <template>
-  <div ref="navbar" class="sticky top-0 z-[99] w-full flex-none bg-white duration-300">
+  <div ref="navbar" class="fixed top-0 z-[99] w-full flex-none bg-white duration-300">
     <div class="max-w-8xl mx-auto w-full">
       <div class="mx-4 py-3 lg:mx-0">
         <div class="relative flex items-center justify-between">

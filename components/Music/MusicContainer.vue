@@ -1,80 +1,85 @@
 <template>
-  <MusicList
-    :songList="musicStore.musicLists"
-    :playStatus="state.playing"
-    :model-value="musicStore.musicInfo"
-    @PlayThisMusic="PlayThisMusic" />
-  <!-- 播放器 -->
-  <div
-    class="mx-16 mb-14 box-border flex h-[130px] w-[calc(100%-128px)] items-center justify-between rounded-2xl bg-white shadow-lg md:px-[28px]"
-    @click="state.openMenu = !state.openMenu">
-    <audio :src="musicStore.musicInfo.url" ref="audio"></audio>
-    <el-image
-      class="hidden h-24 w-24 rounded-2xl md:block"
-      :src="musicStore.musicInfo.cover"></el-image>
+  <div class="h-full">
+    <MusicList
+      :songList="musicStore.musicLists"
+      :playStatus="state.playing"
+      :model-value="musicStore.musicInfo"
+      @PlayThisMusic="PlayThisMusic" />
+    <!-- 播放器 -->
+    <div
+      class="fixed bottom-0 mx-16 mb-14 box-border flex h-[130px] w-[calc(100%-128px)] items-center justify-between rounded-2xl bg-white shadow-lg max-lg:mx-0 max-lg:mb-0 max-lg:w-full max-lg:rounded-none md:px-[28px]"
+      @click="state.openMenu = !state.openMenu">
+      <audio :src="musicStore.musicInfo.url" ref="audio"></audio>
+      <el-image
+        class="hidden h-24 w-24 rounded-2xl lg:block"
+        :src="musicStore.musicInfo.cover"></el-image>
 
-    <section class="flex flex-1 flex-col pl-6">
-      <div class="flex items-center justify-between">
-        <div class="flex items-center gap-6">
-          <span>{{ musicStore.musicInfo.name }}</span>
+      <section class="flex flex-1 flex-col pl-6 max-sm:pl-0">
+        <div class="flex flex-wrap items-center justify-between max-sm:flex-col">
+          <div class="flex items-center gap-6">
+            <span>{{ musicStore.musicInfo.name }}</span>
+            <!-- 模式 -->
+            <div class="text-hd-Green mr-3 cursor-pointer text-lg duration-150 hover:scale-110">
+              <svg-icon
+                name="cycle"
+                v-if="musicStore.playMode === 'loop'"
+                @click.stop="musicStore.playMode = 'random'"></svg-icon>
+              <svg-icon
+                name="shuffle"
+                v-else-if="musicStore.playMode === 'random'"
+                @click.stop="musicStore.playMode = 'loop'"></svg-icon>
+            </div>
+          </div>
+
+          <!-- 控制按鈕 -->
+          <div
+            class="box-border flex h-full w-[240px] items-center justify-between px-5 max-sm:mt-3">
+            <svg-icon
+              name="arrow_left"
+              class="h-10 w-10 cursor-pointer duration-150 hover:scale-110"
+              @click.stop="prevSong"></svg-icon>
+            <svg-icon
+              v-show="!state.playing"
+              name="play"
+              class="h-10 w-10 cursor-pointer duration-150 hover:scale-110"
+              @click.stop="playMusic"></svg-icon>
+            <svg-icon
+              v-show="state.playing"
+              name="stop"
+              class="h-10 w-10 cursor-pointer duration-150 hover:scale-110"
+              @click.stop="playMusic"></svg-icon>
+            <svg-icon
+              name="arrow_right"
+              class="h-10 w-10 cursor-pointer duration-150 hover:scale-110"
+              @click.stop="nextSong"></svg-icon>
+          </div>
+
           <!-- /聲音 -->
-          <div class="text-hd-Green mr-3 cursor-pointer text-lg duration-150 hover:scale-110">
-            <svg-icon
-              name="cycle"
-              v-if="musicStore.playMode === 'loop'"
-              @click.stop="musicStore.playMode = 'random'"></svg-icon>
-            <svg-icon
-              name="shuffle"
-              v-else-if="musicStore.playMode === 'random'"
-              @click.stop="musicStore.playMode = 'loop'"></svg-icon>
+          <div
+            class="box-border flex w-auto items-center justify-between gap-4 px-5 text-white max-sm:hidden">
+            <svg-icon name="volume_down"></svg-icon>
+            <div class="w-[100px]" @click.stop="">
+              <el-slider v-model="state.volume"></el-slider>
+            </div>
+            <svg-icon name="volume_up"></svg-icon>
           </div>
         </div>
 
-        <!-- 控制按鈕 -->
-        <div class="box-border flex h-full w-[240px] items-center justify-between px-5">
-          <svg-icon
-            name="arrow_left"
-            class="h-10 w-10 cursor-pointer duration-150 hover:scale-110"
-            @click.stop="prevSong"></svg-icon>
-          <svg-icon
-            v-show="!state.playing"
-            name="play"
-            class="h-10 w-10 cursor-pointer duration-150 hover:scale-110"
-            @click.stop="playMusic"></svg-icon>
-          <svg-icon
-            v-show="state.playing"
-            name="stop"
-            class="h-10 w-10 cursor-pointer duration-150 hover:scale-110"
-            @click.stop="playMusic"></svg-icon>
-          <svg-icon
-            name="arrow_right"
-            class="h-10 w-10 cursor-pointer duration-150 hover:scale-110"
-            @click.stop="nextSong"></svg-icon>
-        </div>
-
-        <!-- /聲音 -->
-        <div class="box-border flex w-auto items-center justify-between gap-4 px-5 text-white">
-          <svg-icon name="volume_down"></svg-icon>
-          <div class="w-[100px]" @click.stop="">
-            <el-slider v-model="state.volume"></el-slider>
+        <!-- 進度條 -->
+        <div
+          class="relative mt-2 flex h-full w-full items-center gap-4 px-4 max-sm:gap-1 max-sm:px-2">
+          <div id="audio-bar" class="flex-1">
+            <el-slider
+              v-model="state.thumbTranslateX"
+              @click.stop=""
+              :max="state.audioDuration"
+              :format-tooltip="formatTime"
+              @input="setProgress"></el-slider>
           </div>
-          <svg-icon name="volume_up"></svg-icon>
+          <span class="w-[80px] text-center">{{ state.currentTime }}/{{ state.audioTime }}</span>
         </div>
-      </div>
-
-      <!-- 進度條 -->
-      <div class="relative mt-2 flex h-full w-full items-center gap-4 px-4">
-        <div id="audio-bar" class="flex-1">
-          <el-slider
-            v-model="state.thumbTranslateX"
-            @click.stop=""
-            :max="state.audioDuration"
-            :format-tooltip="formatTime"
-            @input="setProgress"></el-slider>
-        </div>
-        <span class="w-[80px] text-center">{{ state.currentTime }}/{{ state.audioTime }}</span>
-      </div>
-    </section>
+      </section>
+    </div>
   </div>
 </template>
 
