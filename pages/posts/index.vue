@@ -3,30 +3,33 @@
     <section class="w-[60%] max-md:w-[90%]">
       <span v-if="pending || error">Loading...</span>
       <SelectRadio v-model="state.tag" :lists="tagList" />
-      <Anchor
+      <div
         v-for="(post, index) in state.tag == 'all' ? data?.posts : data?.postsByTag.get(state.tag)"
         :key="index"
-        class="relative my-6 flex w-full flex-wrap justify-between border p-4 py-6 duration-300 hover:-translate-y-1 hover:shadow-md max-sm:flex-col"
-        :to="`/posts/${post.slug}`">
-        <div class="mt-1 min-w-[100px] text-right max-sm:border-b">
-          <div>{{ post.Date }}</div>
-        </div>
-        <div class="flex flex-1 flex-col gap-1 px-4 max-sm:my-4">
-          <span class="text-xl font-semibold">{{ post.Title }}</span>
-          <span class="text-sm">{{ post.desc }}</span>
-        </div>
-        <div class="">
-          <el-tag
-            v-for="(item, index) in post.Tags"
-            :key="index"
-            type="success"
-            class="mx-1"
-            effect="plain"
-            round
-            >{{ item }}
-          </el-tag>
-        </div>
-      </Anchor>
+        class="w-full transition-[0.3s] hover:-translate-y-1 hover:shadow-md">
+        <Anchor
+          class="relative my-6 flex w-full flex-wrap justify-between border p-4 py-6 max-sm:flex-col"
+          :to="`/posts/${post.slug}`">
+          <div class="mt-1 min-w-[100px] text-right max-sm:border-b">
+            <div>{{ post.Date }}</div>
+          </div>
+          <div class="flex flex-1 flex-col gap-1 px-4 max-sm:my-4">
+            <span class="text-xl font-semibold">{{ post.Title }}</span>
+            <span class="text-sm">{{ post.desc }}</span>
+          </div>
+          <div class="">
+            <el-tag
+              v-for="(item, index) in post.Tags"
+              :key="index"
+              type="success"
+              class="mx-1"
+              effect="plain"
+              round
+              >{{ item }}
+            </el-tag>
+          </div>
+        </Anchor>
+      </div>
     </section>
   </Wrapper>
 </template>

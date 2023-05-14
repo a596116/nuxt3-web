@@ -19,7 +19,7 @@
     <div
       class="max-h-[600px] w-full flex-1 overflow-auto rounded-2xl p-5 shadow-lg max-lg:max-h-[calc(100vh-190px)] max-lg:rounded-none max-sm:p-1 lg:w-[60%]">
       <div
-        class="hover:bg-hd-hoverGreen my-2 mb-1 flex w-full cursor-pointer items-center justify-around rounded-xl px-4 py-2 duration-150 hover:shadow-sm max-sm:px-1 max-sm:text-sm"
+        class="sm:hover:bg-hd-hoverGreen my-2 mb-1 flex w-full cursor-pointer items-center justify-around rounded-xl px-4 py-2 duration-150 hover:shadow-sm max-sm:px-1 max-sm:text-sm"
         :class="{ 'bg-hd-hoverGreen shadow-lg': props.modelValue.id == index }"
         v-for="(item, index) in props.songList"
         :key="item.id"

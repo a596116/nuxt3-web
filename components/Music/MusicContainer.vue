@@ -66,8 +66,7 @@
         </div>
 
         <!-- 進度條 -->
-        <div
-          class="relative mt-2 flex h-full w-full items-center gap-4 px-4 max-sm:gap-1 max-sm:px-2">
+        <div class="relative mt-2 flex h-full w-full items-center gap-4 px-4 max-sm:gap-1">
           <div id="audio-bar" class="flex-1">
             <el-slider
               v-model="state.thumbTranslateX"
