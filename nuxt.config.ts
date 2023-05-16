@@ -27,7 +27,12 @@ export default defineNuxtConfig({
         }
     ],
     // css
-    css: ['~/assets/sass/app.scss', '~/assets/sass/tailwind.css', 'animate.css/animate.min.css'],
+    css: [
+        '~/assets/sass/app.scss',
+        '~/assets/sass/tailwind.css',
+        'animate.css/animate.min.css',
+        'element-plus/dist/index.css',
+    ],
 
 
     build: {
@@ -39,13 +44,9 @@ export default defineNuxtConfig({
         '@nuxtjs/tailwindcss',
         '@pinia/nuxt',
         '@pinia-plugin-persistedstate/nuxt',
-        'unplugin-icons/nuxt',
-        '@nuxt/content',
         '@intlify/nuxt3',
-        '@element-plus/nuxt',
         'nuxt-lodash',
         '@vueuse/nuxt',
-        // ["vue3-notion/nuxt", { css: true }]
     ],
 
     // app config
@@ -83,14 +84,4 @@ export default defineNuxtConfig({
 
     // runtimeConfig: createRuntimeConfig(),
 
-    // content
-    content: {
-        documentDriven: false,
-        markdown: {
-            mdc: true,
-        },
-        highlight: {
-            theme: 'github-dark',
-        },
-    },
 })

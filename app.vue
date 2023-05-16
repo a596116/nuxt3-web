@@ -22,3 +22,4 @@ useHead({
     </Body>
   </Html>
 </template>
+<style src="~/assets/sass/_variables.scss"></style>
