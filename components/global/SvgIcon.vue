@@ -3,9 +3,8 @@
     :class="svgClass"
     v-bind="$attrs"
     :style="{ color: color }"
-    :width="width"
-    :height="height"
-  >
+    :width="(width as any)"
+    :height="(height as any)">
     <use :xlink:href="iconName" />
   </svg>
 </template>
@@ -38,9 +37,7 @@ const props = defineProps({
 const iconName = computed(() => `#icon-${props.name}`)
 const svgClass = computed(() => {
   if (props.name) {
-    return `svg-icon icon-${props.name} ${
-      props.animation ? 'hover:animate-move' : ''
-    }`
+    return `svg-icon icon-${props.name} ${props.animation ? 'hover:animate-move' : ''}`
   }
   return 'svg-icon'
 })

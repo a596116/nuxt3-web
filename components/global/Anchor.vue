@@ -29,7 +29,7 @@ const to = toRef(props, 'to')
   <a
     v-else-if="href"
     class="hover:text-hd-hoverText cursor-pointer outline-none transition-colors duration-300"
-    :href="href"
+    :href="(href as any)"
     target="_blank">
     <slot>{{ text }}</slot>
   </a>
