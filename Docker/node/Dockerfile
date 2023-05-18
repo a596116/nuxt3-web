@@ -5,7 +5,7 @@ WORKDIR /app
 
 # 複製 package.json 和 package-lock.json 至工作目錄
 COPY package.json /app/
-COPY package-lock.json /app/
+COPY pnpm-lock.yaml /app/
 
 # 複製所有
 COPY . /app
