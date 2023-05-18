@@ -1,15 +1,24 @@
-FROM node:17-alpine
+FROM node:lts-alpine
 
-RUN mkdir -p /usr/src/nuxt-app
-WORKDIR /usr/src/nuxt-app
-COPY . .
+# 設定工作目錄
+WORKDIR /app
 
-RUN npm ci && npm cache clean --force
-RUN npm run build
+# 複製 package.json 和 package-lock.json 至工作目錄
+COPY package.json /app/
+COPY package-lock.json /app/
 
-ENV NUXT_HOST=0.0.0.0
-ENV NUXT_PORT=3000
+# 複製所有
+COPY . /app
 
-EXPOSE 3000 
+# 依照指定版本安裝依賴
+RUN npm install -g pnpm
+RUN pnpm install 
 
-ENTRYPOINT ["node", ".output/server/index.mjs"]
+# 建立生產版本
+RUN pnpm run build
+
+# 暴露的連接埠
+EXPOSE 3000
+
+# 啟動應用程式
+CMD ["node", ".output/server/index.mjs"]
