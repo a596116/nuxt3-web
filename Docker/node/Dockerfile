@@ -18,7 +18,6 @@ RUN pnpm install
 RUN pnpm run build
 
 
-
 # 暴露的連接埠
 EXPOSE 3000
 
