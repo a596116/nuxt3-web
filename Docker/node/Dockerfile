@@ -4,7 +4,7 @@ FROM node:lts-alpine
 WORKDIR /app
 
 # 複製 package.json 和 package-lock.json 至工作目錄
-COPY ./package*.json ./
+COPY ./package.json ./
 # COPY pnpm-lock.yaml /app/
 
 # 複製所有
