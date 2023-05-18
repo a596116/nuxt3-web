@@ -8,7 +8,6 @@ MAINTAINER haodai
 
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 
-
 COPY ssl.crt /etc/nginx/
 COPY ssl.key /etc/nginx
 
