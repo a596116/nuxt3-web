@@ -17,7 +17,6 @@ RUN pnpm install
 # 建立生產版本
 RUN pnpm run build
 
-
 # 暴露的連接埠
 EXPOSE 3000
 
