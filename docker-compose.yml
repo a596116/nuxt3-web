@@ -17,6 +17,7 @@ services:
       - /usr/bin/docker:/usr/bin/docker
       - /etc/hosts:/etc/hosts
       - /root/.m2:/root/.m2
+
   mysql:
     container_name: 'mysql'
     image: mysql:8.0.32
