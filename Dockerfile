@@ -12,6 +12,7 @@ COPY ./ ./
 
 # 依照指定版本安裝依賴
 RUN npm install -g pnpm
+RUN npm cache clean --force
 RUN pnpm install 
 
 # 建立生產版本
