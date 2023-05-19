@@ -4,14 +4,13 @@ import axios from 'axios'
 export default defineEventHandler(async (event) => {
 
     // const docs = await serverQueryContent(event).find()
-    console.log(event.req.headers)
     const sitemap = new SitemapStream({
         hostname: 'http://localhost:3000'
     })
 
     const dad = await axios({
         method: 'get',
-        url: 'http://192.168.50.83:3000/user/role',
+        url: 'https://870c-220-141-228-159.ngrok-free.app/user/role',
         data: {
             page: 1,
             take: 10
