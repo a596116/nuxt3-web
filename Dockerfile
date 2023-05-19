@@ -3,6 +3,9 @@ FROM node:lts-alpine
 # 設定工作目錄
 WORKDIR /app
 
+# 作者
+MAINTAINER haodai
+
 # 複製 package.json 和 package-lock.json 至工作目錄
 COPY package*.json ./
 COPY pnpm-lock.yaml ./
