@@ -2,7 +2,6 @@
 import { SitemapStream, streamToPromise } from 'sitemap'
 import axios from 'axios'
 export default defineEventHandler(async (event) => {
-
     // const docs = await serverQueryContent(event).find()
     const sitemap = new SitemapStream({
         hostname: 'http://localhost:3000'
@@ -10,13 +9,13 @@ export default defineEventHandler(async (event) => {
 
     const dad = await axios({
         method: 'get',
-        url: 'https://870c-220-141-228-159.ngrok-free.app/user/role',
+        url: 'http://192.168.50.83:3000/user/role',
         data: {
             page: 1,
             take: 10
         },
         headers: {
-
+            haodai: event.req.headers.host
         }
     }).then((res) => {
         // console.log(res.data)
