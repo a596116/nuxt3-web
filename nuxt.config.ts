@@ -1,5 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-
+import sitemap from "./static/sitemap"
 import { createRuntimeConfig, createViteConfig } from "./build"
 
 export default defineNuxtConfig({
@@ -47,7 +47,10 @@ export default defineNuxtConfig({
         '@intlify/nuxt3',
         'nuxt-lodash',
         '@vueuse/nuxt',
+        // 'nuxt-simple-sitemap',
+        // '@nuxtjs/sitemap',
     ],
+    // sitemap: sitemap,
 
     // app config
     app: {
@@ -83,5 +86,6 @@ export default defineNuxtConfig({
     vite: createViteConfig(),
 
     // runtimeConfig: createRuntimeConfig(),
+
 
 })
