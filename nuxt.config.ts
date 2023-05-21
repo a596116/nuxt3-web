@@ -1,5 +1,4 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import sitemap from "./static/sitemap"
 import { createRuntimeConfig, createViteConfig } from "./build"
 
 export default defineNuxtConfig({
