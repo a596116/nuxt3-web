@@ -46,17 +46,14 @@ const menus = computed((): IMenuItem[] => [
             </li>
           </ul>
         </nav>
-        <div class="ml-6 flex space-x-4 border-l border-gray-900/10 pl-6">
-          <!-- <LanguageSwitcher /> -->
-          <!-- <ThemeSwitcher /> -->
+        <!-- <div class="ml-6 flex space-x-4 border-l border-gray-900/10 pl-6">
           <Anchor
             class="hover:text-hd-hoverGreen flex items-center self-center text-lg hover:no-underline"
             href="https://github.com/a596116"
             title="Github">
             <svg-icon name="github"></svg-icon>
-            <!-- <IconMdi:github /> -->
           </Anchor>
-        </div>
+        </div> -->
       </div>
     </template>
     <template #drawer="{ toggleDrawer }">
