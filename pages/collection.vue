@@ -9,7 +9,7 @@ useHead(() => ({
   meta: [
     {
       name: 'description',
-      content: t('pages.collection.description'),
+      content: '浩呆作品集',
     },
   ],
 }))

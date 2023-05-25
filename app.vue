@@ -7,7 +7,7 @@ const app = useAppConfig() as AppConfigInput
 
 useHead({
   title: app.name,
-  titleTemplate: '%s | 浩呆前端',
+  titleTemplate: '%s - 浩呆前端',
 })
 </script>
 

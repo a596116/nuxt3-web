@@ -16,7 +16,7 @@ useHead(() => ({
   meta: [
     {
       name: 'description',
-      content: '浩呆前湍開發',
+      content: '關於浩呆',
     },
   ],
 }))

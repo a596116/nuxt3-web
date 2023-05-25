@@ -37,6 +37,16 @@
 <script lang="ts" setup>
 const { $notion } = useNuxtApp()
 
+useHead(() => ({
+  title: 'Blog',
+  meta: [
+    {
+      name: 'description',
+      content: '浩呆Blog',
+    },
+  ],
+}))
+
 const state = reactive({
   tag: 'all',
 })

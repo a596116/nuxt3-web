@@ -61,7 +61,7 @@ export default defineNuxtConfig({
                 { name: 'viewport', content: 'width=device-width, initial-scale=1' },
                 { name: 'description', content: `浩呆前端` },
                 { name: 'description', content: `熱愛技術的前端小白` },
-                { name: 'keywords', content: `浩呆,浩呆前端,王教勛,王教勛前端` },
+                { name: 'keywords', content: `浩呆,浩呆前端,王教勛,王教勛前端,王浩呆` },
                 { property: 'og:title', content: `浩呆前端` },
                 { property: 'og:description', content: `熱愛技術的前端小白` },
                 { property: 'og:image', content: `https://upload.cc/i1/2023/02/08/tHrl3G.png` },
