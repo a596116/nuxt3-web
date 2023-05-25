@@ -2,7 +2,6 @@
 import { createRuntimeConfig, createViteConfig } from "./build"
 
 export default defineNuxtConfig({
-
     ssr: true,
 
     // typescripts
@@ -84,7 +83,6 @@ export default defineNuxtConfig({
     // vite
     vite: createViteConfig(),
 
-    // runtimeConfig: createRuntimeConfig(),
-
+    runtimeConfig: createRuntimeConfig(),
 
 })

@@ -4,26 +4,28 @@ import axios from 'axios'
 export default defineEventHandler(async (event) => {
     // const docs = await serverQueryContent(event).find()
     const sitemap = new SitemapStream({
-        hostname: 'http://localhost:3000'
+        hostname: 'https://wanghaodai.com'
     })
-
-    const dad = await axios({
-        method: 'get',
-        url: 'https://870c-220-141-228-159.ngrok-free.app/user/role',
-        data: {
-            page: 1,
-            take: 10
-        },
-        headers: {
-            haodai: event.req.headers.host
-        }
-    }).then((res) => {
-        // console.log(res.data)
-    })
+    // const dad = await axios({
+    //     method: 'get',
+    //     url: 'https://870c-220-141-228-159.ngrok-free.app/user/role',
+    //     data: {
+    //         page: 1,
+    //         take: 10
+    //     },
+    //     headers: {
+    //         haodai: event.req.headers.host
+    //     }
+    // }).then((res) => {
+    //     // console.log(res.data)
+    // })
+    const page = ['/', 'about', 'collection', 'posts', 'music']
     // for (const doc of docs) {
-    sitemap.write({
-        url: '/',
-        changefreq: event.req.url
+    page.forEach((doc) => {
+        sitemap.write({
+            url: doc,
+            changefreq: 'daily',
+        })
     })
     // }
     sitemap.end()
