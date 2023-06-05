@@ -57,7 +57,7 @@ export default defineNuxtConfig({
         layoutTransition: { name: 'layout', mode: 'out-in' },
         head: {
             meta: [
-                { name: 'google-site-verification', content: '77iFFXtD8szKWL5Xw9f9-SqeomLzmPFbwAWp_GrXLrY' },
+                { name: 'google-site-verification', content: 'HVPSQ5axRBDcKliZ0EImWpYUZqoO60djgGGj9nEC6Kc' },
                 { name: 'viewport', content: 'width=device-width, initial-scale=1' },
                 { name: 'description', content: `浩呆前端` },
                 { name: 'description', content: `熱愛技術的前端小白` },
@@ -67,7 +67,7 @@ export default defineNuxtConfig({
                 { property: 'og:image', content: `https://upload.cc/i1/2023/02/08/tHrl3G.png` },
             ],
             link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-        }
+        },
     },
 
     // localization - i18n config
