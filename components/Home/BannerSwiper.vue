@@ -83,7 +83,7 @@ const content = [
   @apply left-1/2 top-1/2  text-center;
 }
 :deep(.swiper-pagination-bullet) {
-  background-color: rgb(28, 38, 61) !important;
+  background-color: var(--hd-white) !important;
   height: 12px;
   width: 12px;
 }
