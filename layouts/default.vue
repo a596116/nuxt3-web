@@ -13,7 +13,7 @@
       </slot>
     </div>
     <el-backtop
-      class="hover:bg-hd-hover hover:text-hd-white text-hd-primary bottom-[200px] right-10 z-[50] duration-300 sm:bottom-[140px] sm:right-[80px]" />
+      class="hover:bg-hd-hover hover:text-hd-white text-hd-primary bottom-[140px] right-10 z-[50] duration-300 sm:right-[80px]" />
     <slot name="app-after" />
     <div id="app-after"></div>
   </div>
