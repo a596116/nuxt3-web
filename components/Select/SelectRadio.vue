@@ -25,7 +25,7 @@ const change = (val?: any) => {
 
 <style scoped lang="scss">
 :deep(.el-radio-button__inner) {
-  @apply border-hd-Text/60 rounded-full;
+  @apply border-hd-black rounded-full;
   border-left: 1px solid;
 }
 :deep(.el-radio-button:first-child .el-radio-button__inner) {

@@ -1,103 +1,31 @@
-@use 'sass:color';
-
-$MQLarge: 1200px !default;
-$MQIpad: 1023px !default;
-$MQNarrow: 959px !default;
-$MQMobile: 719px !default;
-$MQMobileNarrow: 419px !default;
-
-// base colors
-$darkColor10: rgba(27, 35, 47, 1);
-$darkColor9: rgba(27, 35, 47, 0.9);
-$darkColor8: rgba(27, 35, 47, 0.8);
-$darkColor7: rgba(27, 35, 47, 0.7);
-$darkColor6: rgba(27, 35, 47, 0.6);
-$darkColor5: rgba(27, 35, 47, 0.5);
-$darkColor4: rgba(27, 35, 47, 0.4);
-$darkColor3: rgba(27, 35, 47, 0.3);
-$darkColor2: rgba(27, 35, 47, 0.2);
-$darkColor1: rgba(27, 35, 47, 0.1);
-
-$lightColor10: rgba(255, 255, 255, 1);
-$lightColor9: rgba(255, 255, 255, 0.9);
-$lightColor8: rgba(255, 255, 255, 0.8);
-$lightColor7: rgba(255, 255, 255, 0.7);
-$lightColor6: rgba(255, 255, 255, 0.6);
-$lightColor5: rgba(255, 255, 255, 0.5);
-$lightColor4: rgba(255, 255, 255, 0.4);
-$lightColor3: rgba(255, 255, 255, 0.3);
-$lightColor2: rgba(255, 255, 255, 0.2);
-$lightColor1: rgba(255, 255, 255, 0.1);
-
-$padding: 0.05em;
-
-// code colors
-$codeBgColor: #2d2d2d !default;
-$codeHighlightBgColor: rgba(0, 0, 0, 66%) !default;
-
-$codeColor: rgba(27, 31, 35, 0.05) !default;
-$codeColorDark: $darkColor3 !default;
-
-$inlineCodeText: #c52950 !default;
-$inlineCodeTextDark: #96c2eb !default;
-$inlineCodeBg: #f9f2f4 !default;
-$inlineCodeBgDark: rgba(76, 86, 128, 0.4) !default;
-
-// shadow colors
-$boxShadow: 0 1px 8px 0 $darkColor1 !default;
-$boxShadowHover: 0 2px 16px 0 $darkColor2 !default;
-$boxShadowDark: 0 1px 8px 0 $darkColor6 !default;
-$boxShadowHoverDark: 0 2px 16px 0 $darkColor7 !default;
-$boxShadowInset: inset 2px 2px 4px #bab6b6, inset -1px -1px 4px $lightColor6 !default;
-$boxShadowInsetDark: inset 2px 2px 4px $darkColor9, inset -1px -1px 4px $lightColor2 !default;
-
-// theme primary colors
-$brandColor: #377bb5 !default;
-$brandColorDark: #91b0cb !default;
-
-// text colors
-$textColor: rgba(0, 0, 0, 0.9) !default;
-$textColorDark: $lightColor8 !default;
-
-$textColorSub: #7f7f7f !default;
-$textColorSubDark: #8b8b8b !default;
-
-// background colors
-$bgColor: #fff !default;
-$bgColorDark: #2d3746 !default;
-$bgColorLight: #fafafa !default;
-$bgColorLightDark: #313d4e !default;
-$bgColorLighter: #f6f6f6 !default;
-$bgColorLighterDark: #404d61 !default;
-$bgColorTransparent: rgba(255, 255, 255, 0.9) !default;
-$bgColorTransparentDark: rgb(45, 55, 71, 0.9) !default;
-
-// border colors
-$borderColor: #eaeaea !default;
-$borderColorDark: #3c4a5f !default;
-$borderColorSub: #dadada !default;
-$borderColorSubDark: #4b5a70 !default;
-
-// mask colors
-$maskColor: #888 !default;
-$maskColorDark: #000 !default;
-
-// theme primary colors
-$brandColor: #377bb5 !default;
-$brandColorDark: #74b3eb !default;
-
-// Container colors
-$infoColor: #007bff !default;
-$tipColor: #42b983 !default;
-$tipTitleColor: #{darken(#42b983, 10%)} !default;
-$warningColor: #f4cd00 !default;
-$warningTitleColor: #{darken(#f4cd00, 10%)} !default;
-$dangerColor: #f55 !default;
-$dangerTitleColor: #{darken(#f55, 10%)} !default;
-
 :root {
+  //---------------------------------------------
+  // 變量
+  //---------------------------------------------
+  --hd-primary: #c9dbb2;
+  --hd-secondary: #ffeeb3;
+  --hd-success: #aed8cc;
+  --hd-danger: #dc3545;
+  --hd-warning: #ffc107;
+  --hd-info: #7bbdc7;
+  --hd-black: #404042;
+  --hd-black-50: #49536f7f;
+  --hd-white: #ffffff;
+  --hd-white-50: #ffffffa2;
+  --hd-disable: #93b56eab;
+  --hd-bg: #fcfcfc;
+  --hd-hover: #bfccb5;
+  --hd-click: #aac8a7;
+
+  // shadow
+  --hd-shadow-small: 0px 2px 4px 0px #00000013;
+  --hd-shadow-regular: 0px 8px 16px 0px #00000026;
+  --hd-shadow-larger: 0px 16px 48px 0px #0000002d;
+
   // 變更 element plus 主色
-  --el-color-primary: #98ae87;
+  --el-color-primary: #c9dbb2;
+  --el-color-success: #aed8cc;
+
   --blue-primary-50: #f8fbff;
   --blue-primary-100: #e3f1ff;
   --blue-primary-400: #464f5e;
@@ -118,77 +46,12 @@ $dangerTitleColor: #{darken(#f55, 10%)} !default;
   --el-color-info: #b7b7b7;
   --primary-text-color: #252525;
   --form-editable-bg: #f5f7fa;
-  --el-disabled-bg-color: #ececec;
+  --el-disabled-bg-color: #hdhdhd;
 }
 
-$theme: #2aa0bb;
-$background: #fff;
-$background-dark: #363636;
-$theme-color: $theme;
-$theme-color-lighten: color.adjust($theme-color, $lightness: 20%);
-$theme-color-darken: color.adjust($theme-color, $lightness: -10%);
-$header-height: 48px;
-$footer-height: 64px;
-$animation-duration: 0.2s;
-$animation-function: cubic-bezier(0, 0, 0, 1);
-$common-transition: all $animation-duration $animation-function;
-$z-index-mode-bg: 10;
-$z-index-body: 20;
-$z-index-header: 500;
-$z-index-footer: 30;
-$z-index-notify: 1000;
-$z-index-modal: 999;
-$z-index-dropdown: 999;
-
-// $font-source-han-sans: unset;
-$font-source-han-sans: 'lxgwwenkai', system-ui, monospace;
-
-// $font-source-han-sans: none;
-
-// $font-code: "Source Code Pro", serif;
-$font-code: 'Fira Code', serif;
-
-@mixin mobile {
-  // @if & {
-  //   @at-root body.is-mobile & {
-  //     @content;
-  //   }
-  // } @else {
-  //   @at-root body.is-mobile {
-  //     @content;
-  //   }
-  // }
-  @media screen and (max-width: 768px) {
-    @content;
-  }
-}
-
-@mixin square($size: 100%) {
-  width: $size;
-  height: $size;
-}
-
-$font-size: 18px;
-
-@function f-size($size: 1) {
-  @return $font-size * $size;
-}
-
-@mixin textoverflow($line: 1) {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  word-break: break-all;
-  -webkit-line-clamp: $line;
-}
-
-@mixin dark-mode($is-self: false) {
-  @if $is-self {
-    &.dark-mode {
-      @content;
-    }
-  } @else {
-    @at-root html.dark-mode & {
-      @content;
-    }
-  }
+// center
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

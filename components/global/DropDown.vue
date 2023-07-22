@@ -4,8 +4,7 @@
       <slot name="title">
         <button class="inline-flex items-center rounded py-2">
           <el-badge v-if="badge" :value="Number(badge)" :max="99" class="item">
-            <span
-              class="group-hover:text-hd-hoverText flex items-center justify-center duration-300">
+            <span class="group-hover:text-hd-success flex items-center justify-center duration-300">
               <svg-icon :name="icon" class="group-hover:animate-move" />
             </span>
           </el-badge>
@@ -14,7 +13,7 @@
           </Anchor>
           <span
             v-else
-            class="group-hover:text-hd-hoverText flex items-center justify-center duration-300">
+            class="group-hover:text-hd-success flex items-center justify-center duration-300">
             <svg-icon :name="icon" class="group-hover:animate-move" />
           </span>
         </button>
@@ -31,28 +30,18 @@
 </template>
 
 <script setup lang="ts">
-// micro compiler
-const props = defineProps({
-  type: {
-    type: String,
-    default: 'dropdown',
+const props = withDefaults(
+  defineProps<{
+    type?: 'dropdown' | 'select'
+    icon?: string
+    badge?: string | number
+    to?: string
+  }>(),
+  {
+    type: 'dropdown',
+    icon: 'home',
   },
-  animation: {
-    type: Boolean,
-    default: false,
-  },
-  icon: {
-    type: String,
-    default: 'home',
-  },
-  badge: {
-    type: Number,
-  },
-  to: {
-    type: String,
-  },
-})
-
+)
 // state
 const currentStyle = toRef(props, 'type')
 </script>

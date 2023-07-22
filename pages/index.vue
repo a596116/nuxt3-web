@@ -14,9 +14,10 @@ useHead(() => ({
 </script>
 
 <template>
-  <Wrapper class="flex flex-1" :top="false">
-    <Home />
-  </Wrapper>
+  <div class="">
+    <!-- Banner -->
+    <BannerSwiper />
+    <!-- <Wrapper class="flex-col flex-1 gap-14 bg-ec-bg px-1 items-center">
+    </Wrapper> -->
+  </div>
 </template>
-
-<style lang="scss" scoped></style>

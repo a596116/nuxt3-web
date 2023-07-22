@@ -10,12 +10,12 @@
       <div class="text-xl font-bold">{{ title }}</div>
     </el-divider>
     <div class="flex items-center" v-if="style == 3">
-      <svg-icon name="triangle" class="text-hd-Green h-6 w-6 rotate-90" />
+      <svg-icon name="triangle" class="text-hd-primary h-6 w-6 rotate-90" />
       <div class="mx-3 text-xl font-bold">{{ title }}</div>
-      <svg-icon name="triangle" class="text-hd-Green h-6 w-6 -rotate-90" />
+      <svg-icon name="triangle" class="text-hd-primary h-6 w-6 -rotate-90" />
     </div>
     <div class="relative flex w-full justify-start px-6 py-2" v-if="style == 4">
-      <div class="border-hd-Text border-l-4 pl-3">{{ title }}</div>
+      <div class="border-hd-black border-l-4 pl-3">{{ title }}</div>
     </div>
     <div class="absolute right-0">
       <slot name="right"></slot>
@@ -42,13 +42,13 @@ const bgCol = computed(() => {
 <style scoped lang="scss">
 .title::after {
   content: '';
-  @apply bg-hd-Green absolute -bottom-1 left-1/2 flex h-1 w-3/5 -translate-x-1/2;
+  @apply bg-hd-primary absolute -bottom-1 left-1/2 flex h-1 w-3/5 -translate-x-1/2;
 }
 :deep(.el-divider__text) {
   padding: 0 40px;
   background-color: v-bind(bgCol);
 }
 :deep(.el-divider--horizontal) {
-  @apply border-hd-Green/70;
+  @apply border-hd-primary;
 }
 </style>

@@ -173,7 +173,7 @@ const skills = [
 }
 
 .content .title {
-  @apply text-hd-Text mx-0 mb-2.5 mt-0 flex h-[15%] items-center justify-center font-bold tracking-[5px];
+  @apply text-hd-white mx-0 mb-2.5 mt-0 flex h-[15%] items-center justify-center font-bold tracking-[5px];
 }
 .content .text {
   @apply mx-auto mb-[30px] mt-0 flex h-[70%] flex-col justify-around text-justify text-base leading-[1.5em] text-[#4e4a67];
@@ -206,7 +206,7 @@ const skills = [
 }
 
 .slider .slide:before {
-  @apply bg-hd-Yellow absolute left-0 top-0 h-full w-[-100%] origin-left scale-x-0 rounded-[10px] transition-transform duration-[0.6s] content-[''];
+  @apply bg-hd-secondary absolute left-0 top-0 h-full w-[-100%] origin-left scale-x-0 rounded-[10px] transition-transform duration-[0.6s] content-[''];
 }
 
 #slide_1:checked ~ .slider .slide_1:before,

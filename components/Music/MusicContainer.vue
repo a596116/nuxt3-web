@@ -19,7 +19,7 @@
           <div class="flex items-center gap-6">
             <span>{{ musicStore.musicInfo.name }}</span>
             <!-- 模式 -->
-            <div class="text-hd-Green mr-3 cursor-pointer text-lg duration-150 hover:scale-110">
+            <div class="text-hd-primary mr-3 cursor-pointer text-lg duration-150 hover:scale-110">
               <svg-icon
                 name="cycle"
                 v-if="musicStore.playMode === 'loop'"

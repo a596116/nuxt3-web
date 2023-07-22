@@ -1,5 +1,5 @@
 <template>
-  <Wrapper class="bg-hd-Bg pt-[120px] max-lg:pt-[60px]" :top="false">
+  <Wrapper class="bg-hd-bg pt-[120px] max-lg:pt-[60px]" :top="false">
     <client-only>
       <MusicContainer />
     </client-only>

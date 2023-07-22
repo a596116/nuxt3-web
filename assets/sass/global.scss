@@ -1,9 +1,3 @@
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 // badge
 .el-badge__content.is-fixed {
   right: 16px !important;
@@ -49,7 +43,7 @@
     @apply absolute left-2 top-8  duration-200;
   }
   .el-form-item__label:has(+ .el-form-item__content .el-input__wrapper.is-focus) {
-    @apply text-hd-Green  top-1;
+    @apply text-hd-primary  top-1;
   }
   .el-form-item.is-error .el-input__wrapper {
     box-shadow: none !important;
@@ -62,7 +56,7 @@
     &:before,
     &:after {
       content: '';
-      @apply bg-hd-Green absolute bottom-[0px] h-[2px] w-0;
+      @apply bg-hd-primary absolute bottom-[0px] h-[2px] w-0;
       transition: 0.2s ease all;
       -moz-transition: 0.2s ease all;
       -webkit-transition: 0.2s ease all;
@@ -93,7 +87,7 @@
         .el-input__wrapper
         .el-input__inner:not(:placeholder-shown)
     ) {
-    @apply text-hd-Green  top-2;
+    @apply text-hd-primary  top-2;
   }
 
   .el-input__inner::placeholder {

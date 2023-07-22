@@ -13,8 +13,8 @@ useHead({
 
 <template>
   <Html :lang="locale">
-    <Body class="text-hd-Text bg-white antialiased transition-colors duration-300">
-      <Navbar class="lg:justify-between lg:px-[6rem] 2xl:px-[16rem]" />
+    <Body class="text-hd-black bg-hd-white antialiased transition-colors duration-300">
+      <Navbar class="lg:justify-between" />
       <NuxtLayout>
         <NuxtLoadingIndicator :height="5" :duration="3000" :throttle="400" />
         <NuxtPage />

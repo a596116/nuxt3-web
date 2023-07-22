@@ -20,10 +20,10 @@ const localeSetting = useState<string>('locale.setting')
         @click="localeSetting = lang.iso"
         :key="lang.iso"
         :value="lang.iso"
-        class="flex cursor-pointer items-center rounded-lg py-2 px-2 duration-300"
+        class="flex cursor-pointer items-center rounded-lg px-2 py-2 duration-300"
         :class="{
-          'bg-hd-hoverGreen text-white ': localeSetting === lang.iso,
-          'hover:bg-hd-hoverGreen hover:text-white': localeSetting !== lang.iso,
+          'bg-hd-hover text-hd-white ': localeSetting === lang.iso,
+          'hover:bg-hd-hover hover:text-hd-white': localeSetting !== lang.iso,
         }">
         <span class="mr-2 text-sm">
           {{ lang.flag }}

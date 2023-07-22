@@ -19,8 +19,8 @@
     <div
       class="max-h-[600px] w-full flex-1 overflow-auto rounded-2xl p-5 shadow-lg max-lg:max-h-[calc(100vh-190px)] max-lg:rounded-none max-sm:p-1 lg:w-[60%]">
       <div
-        class="sm:hover:bg-hd-hoverGreen my-2 mb-1 flex w-full cursor-pointer items-center justify-around rounded-xl px-4 py-2 duration-150 hover:shadow-sm max-sm:px-1 max-sm:text-sm"
-        :class="{ 'bg-hd-hoverGreen shadow-lg': props.modelValue.id == index }"
+        class="sm:hover:bg-hd-hover my-2 mb-1 flex w-full cursor-pointer items-center justify-around rounded-xl px-4 py-2 duration-150 hover:shadow-sm max-sm:px-1 max-sm:text-sm"
+        :class="{ 'bg-hd-hover shadow-lg': props.modelValue.id == index }"
         v-for="(item, index) in props.songList"
         :key="item.id"
         @click="PlayThisMusic(index)">
@@ -30,7 +30,7 @@
           </el-image>
           <span
             v-if="props.modelValue.id == index && props.playStatus"
-            class="center bg-hd-Green/70 absolute left-0 top-0 ml-4 h-14 w-14 duration-300">
+            class="center bg-hd-primary absolute left-0 top-0 ml-4 h-14 w-14 duration-300">
             <svg-icon name="volume_up" color="#fff" class="fill-white text-white"></svg-icon>
           </span>
         </div>

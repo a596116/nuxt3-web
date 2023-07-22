@@ -165,7 +165,7 @@ const handleButtonClick = (e: any) => {
 }
 
 .introduce-fullname {
-  @apply text-hd-Text absolute bottom-[-30px] left-2/4 -translate-x-2/4 -translate-y-2.5 whitespace-nowrap text-center text-[22px] font-bold;
+  @apply text-hd-black absolute bottom-[-30px] left-2/4 -translate-x-2/4 -translate-y-2.5 whitespace-nowrap text-center text-[22px] font-bold;
 }
 
 .introduce-jobtitle {
@@ -206,13 +206,13 @@ const handleButtonClick = (e: any) => {
   @apply sticky bottom-0 left-0 mt-auto flex bg-white;
 
   button {
-    @apply text-hd-Text flex-auto cursor-pointer select-none border-0 border-b-[3px] border-solid border-b-transparent px-[5px] py-[15px] text-[13px] font-medium transition-[0.3s];
+    @apply text-hd-black flex-auto cursor-pointer select-none border-0 border-b-[3px] border-solid border-b-transparent px-[5px] py-[15px] text-[13px] font-medium transition-[0.3s];
     background: 0;
     outline: 0;
 
     &.is-active,
     &:hover {
-      @apply border-b-hd-Yellow text-hd-Text border-b-[3px] border-solid;
+      @apply border-b-hd-secondary text-hd-black border-b-[3px] border-solid;
       background: linear-gradient(
         to bottom,
         rgba(127, 199, 231, 0) 0%,

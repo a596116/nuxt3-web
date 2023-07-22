@@ -1,6 +1,5 @@
 // vars
 @import 'global';
-@import 'markdown';
 
 // components
 ::-webkit-scrollbar {
@@ -24,6 +23,9 @@ html {
 }
 a {
   -webkit-tap-highlight-color: transparent;
+}
+body {
+  background: url('../img/bg.png');
 }
 // animations
 @import 'animations/transitions';

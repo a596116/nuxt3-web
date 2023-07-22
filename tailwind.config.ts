@@ -22,13 +22,21 @@ module.exports = {
         extend: {
             colors: {
                 hd: {
-                    Text: '#3C486B',
-                    hoverText: '#A9B598',
-                    Green: '#C9DBB2',
-                    hoverGreen: '#BFCCB5',
-                    clickGreen: '#AAC8A7',
-                    Yellow: '#FFEEB3',
-                    Bg: '#F4F5FE'
+                    primary: 'var(--hd-primary)',
+                    success: 'var(--hd-success)',
+                    secondary: 'var(--hd-secondary)',
+                    hover: 'var(--hd-hover)',
+                    click: 'var(--hd-click)',
+                    bg: 'var(--hd-bg)',
+                    black: 'var(--hd-black)',
+                    'black-50': 'var(--hd-black-50)',
+                    white: 'var(--hd-white)',
+                    'white-50': 'var(--hd-white-50)',
+                    disable: 'var(--hd-disable)',
+                    danger: 'var(--hd-danger)',
+                    warning: 'var(--hd-warning)',
+                    info: 'var(--hd-info)',
+
                 }
             },
             animation: {

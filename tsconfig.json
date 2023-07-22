@@ -1,11 +1,4 @@
 {
   // https://v3.nuxtjs.org/concepts/typescript
-  "extends": "./.nuxt/tsconfig.json",
-  "compilerOptions": {
-    // "strict": true,
-    // "skipLibCheck": true,
-    "outDir": "./.output/public/",
-    "skipLibCheck": true,
-    "types": ["@pinia/nuxt", "@intlify/nuxt3"]
-  }
+  "extends": "./.nuxt/tsconfig.json"
 }

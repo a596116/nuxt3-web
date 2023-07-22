@@ -39,14 +39,14 @@ export default defineNuxtConfig({
     telemetry: false,
     // modules
     modules: [
+        '@element-plus/nuxt',
         '@nuxtjs/tailwindcss',
         '@pinia/nuxt',
         '@pinia-plugin-persistedstate/nuxt',
         '@intlify/nuxt3',
         'nuxt-lodash',
         '@vueuse/nuxt',
-        // 'nuxt-simple-sitemap',
-        // '@nuxtjs/sitemap',
+        '@nuxt/image-edge',
     ],
     // sitemap: sitemap,
 

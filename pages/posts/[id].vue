@@ -33,7 +33,7 @@ const actions = {
 </script>
 
 <template>
-  <section class="bg-hd-Bg min-h-screen">
+  <section class="bg-hd-bg min-h-screen">
     <!-- <div class="mx-20 my-10">
       <el-button @click="actions.prev">上一篇</el-button>
       <el-button @click="actions.next">下一篇</el-button>
