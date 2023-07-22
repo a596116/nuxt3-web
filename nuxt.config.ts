@@ -5,16 +5,16 @@ export default defineNuxtConfig({
     ssr: true,
 
     // typescripts
-    typescript: {
-        strict: true,
-        typeCheck: false,
-        tsConfig: {
-            compilerOptions: {
-                strict: true,
-                types: ['@pinia/nuxt', '~/type.d.ts'],
-            },
-        },
-    },
+    // typescript: {
+    //     strict: true,
+    //     typeCheck: false,
+    //     tsConfig: {
+    //         compilerOptions: {
+    //             strict: true,
+    //             types: ['@pinia/nuxt', '/types/type.d.ts'],
+    //         },
+    //     },
+    // },
 
     components: [
         {

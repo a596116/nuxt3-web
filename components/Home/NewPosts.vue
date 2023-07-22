@@ -44,5 +44,4 @@ const { data, pending, error } = await useAsyncData('all_posts', async () => {
     posts,
   }
 })
-console.log(data.value)
 </script>
