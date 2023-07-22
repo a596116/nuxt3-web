@@ -16,7 +16,7 @@ useHead(() => ({
 </script>
 
 <template>
-  <Wrapper>
+  <Wrapper :top="true">
     <HeadTitle :title="$t('pages.collection.title')" :style="1" />
     <div
       v-for="(group, groupId) in collection"

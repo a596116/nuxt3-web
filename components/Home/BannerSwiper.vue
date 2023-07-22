@@ -46,7 +46,7 @@ SwiperCore.use([Autoplay, Pagination, Parallax, Navigation, EffectFade])
 
 const option: SwiperOptions = {
   autoplay: {
-    delay: 3000,
+    delay: 5000,
     disableOnInteraction: false,
   },
   pagination: {
@@ -75,7 +75,7 @@ const content = [
 
 <style scoped lang="scss">
 .banner-bg {
-  @apply m-auto  w-full;
+  @apply m-auto min-h-[300px] w-full;
   position: relative;
   border-radius: 0px;
 }

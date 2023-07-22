@@ -4,13 +4,13 @@ export const collection = [
         items: [
             {
                 sitename: '後台管理系統',
-                url: 'https://haodai-web.web.app/admin',
+                url: 'https://admin.wanghaodai.com/login',
                 img: 'https://s2.loli.net/2023/02/08/X8yiSYwTF1CENme.png',
                 desc: '使用Vue3、echarts、Element plus、axios、pinia、firebase串接後台API開發的後台系統',
             },
             {
                 sitename: '個人博客',
-                url: 'https://wanghaodai.com/',
+                url: 'https://haodai-blog.web.app/',
                 img: 'https://s2.loli.net/2023/02/08/KjLxycGCJoOM43s.png',
                 desc: 'VuePress搭建的博客網站，存放學習資料',
             },

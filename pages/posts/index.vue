@@ -1,6 +1,6 @@
 <template>
   <Wrapper class="flex min-h-screen flex-1 justify-center">
-    <section class="w-[60%] max-md:w-[90%]">
+    <section class="w-full">
       <span v-if="pending || error">Loading...</span>
       <SelectRadio v-model="state.tag" :lists="tagList" />
       <div

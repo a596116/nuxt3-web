@@ -97,14 +97,7 @@ const dropdown = (type: boolean, cmenu?: any) => {
     </template>
 
     <template #icon>
-      <div class="text-hd-primary relative hidden gap-7 pl-4 lg:flex">
-        <!-- <Search /> -->
-        <!-- <UserBar /> -->
-        <!-- <ShoppingBar /> -->
-        <!-- <Anchor to="/" class="py-2">
-            <svg-icon name="favorite" :animation="true"></svg-icon>
-          </Anchor> -->
-      </div>
+      <div class="text-hd-primary relative hidden gap-7 pl-4 lg:flex"></div>
     </template>
     <template #drawer="{ toggleDrawer }">
       <div
@@ -113,7 +106,7 @@ const dropdown = (type: boolean, cmenu?: any) => {
         class="center absolute h-[44px] w-[44px]">
         <svg-icon name="left" class="h-[30px] w-[30px]"></svg-icon>
       </div>
-      <div class="h-screen pt-[44px]">
+      <div class="text-hd-white h-screen pt-[44px]">
         <!-- <Search type="open" class="my-4" /> -->
         <TransitionGroup name="checkout-up" appear>
           <nav v-if="childrenMenu?.length" class="flex flex-col gap-4 text-white/50">

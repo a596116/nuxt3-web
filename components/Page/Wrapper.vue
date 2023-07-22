@@ -1,6 +1,8 @@
 <template>
   <div class="relative flex-1" :class="{ 'pt-[100px]': props.top }">
-    <slot />
+    <section class="mx-auto w-full max-w-[1200px]">
+      <slot />
+    </section>
   </div>
 </template>
 <script lang="ts" setup>

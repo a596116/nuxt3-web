@@ -37,7 +37,7 @@ const toggleDrawer = () => {
     <div class="max-w-8xl mx-auto flex w-full flex-col items-center">
       <section
         class="min-h-10 bg-hd-black [&:has(.navbar.active)]:bg-hd-black flex h-full w-full justify-center duration-500">
-        <div class="flex w-full max-w-[1024px]">
+        <div class="flex w-full max-w-[1200px]">
           <!-- 小屏 -->
           <article class="flex h-[44px] w-full px-2 lg:hidden">
             <Anchor to="/" class="flex items-center">

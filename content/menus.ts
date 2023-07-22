@@ -12,4 +12,8 @@ export const menus: Menu[] = [
         name: '文章',
         link: '/posts',
     },
+    {
+        name: 'Music',
+        link: '/music',
+    },
 ]
