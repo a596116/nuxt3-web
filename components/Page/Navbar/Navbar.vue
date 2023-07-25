@@ -29,6 +29,12 @@ const dropdown = (type: boolean, cmenu?: any) => {
           { opacity: 1, y: '0em', stagger: 0.1 },
           0,
         )
+        tl.fromTo(
+          '.blur-bg',
+          { visibility: 'hidden', opacity: 0 },
+          { visibility: 'visible', opacity: 1 },
+          0,
+        )
         tl?.play()
       })
     }
@@ -66,6 +72,15 @@ const dropdown = (type: boolean, cmenu?: any) => {
                   :hover="false"
                   :duration="false"
                   @mouseenter="dropdown(false)" />
+                <Anchor
+                  v-else-if="item.link"
+                  :to="item.link ? item.link : undefined"
+                  class="nav center flex-1 px-2 py-2 capitalize"
+                  :text="item.name"
+                  :hover="false"
+                  :duration="false"
+                  @click="dropdown(false)"
+                  @mouseenter="dropdown(true, item.children)" />
                 <span
                   v-else
                   :to="item.link ? item.link : undefined"
@@ -80,20 +95,25 @@ const dropdown = (type: boolean, cmenu?: any) => {
             <section
               v-for="(item, index) in childrenMenu"
               :key="index"
-              class="cmenu-item flex cursor-pointer flex-col items-start gap-2 whitespace-nowrap rounded-md py-6">
+              class="cmenu-item flex flex-col items-start gap-2 whitespace-nowrap rounded-md py-6">
               <Anchor
+                v-if="item.link"
                 :to="item.link ? item.link : undefined"
                 :text="item.name"
+                @click="dropdown(false)"
                 class="text-lg hover:text-white/50" />
+              <span class="mb-1 text-xs text-white/50">{{ item.name }}</span>
               <Anchor
                 v-for="chi of item.children"
                 :to="chi.link ? chi.link : undefined"
                 :text="chi.name"
-                class="text-base text-white hover:text-white/50" />
+                @click="dropdown(false)"
+                class="text-lg text-white hover:text-white/50" />
             </section>
           </div>
         </nav>
       </div>
+      <section class="blur-bg"></section>
     </template>
 
     <template #icon>
@@ -187,5 +207,10 @@ const dropdown = (type: boolean, cmenu?: any) => {
     // height: 200px;
     height: v-bind(openHeight);
   }
+}
+.blur-bg {
+  @apply absolute left-0 top-0 -z-10 h-screen w-full;
+  visibility: hidden;
+  backdrop-filter: blur(20px);
 }
 </style>

@@ -1,11 +1,8 @@
 <script lang="ts" setup>
-import { capitalize } from '~/utils/str'
 import { collection } from '~/content/collection'
-// composable
-const { t } = useLang()
 
 useHead(() => ({
-  title: capitalize(t('pages.collection.title')),
+  title: '作品集',
   meta: [
     {
       name: 'description',
@@ -13,13 +10,21 @@ useHead(() => ({
     },
   ],
 }))
+const route = useRoute()
+
+const data = computed(() => {
+  if (route.query.type) {
+    return collection.filter((item) => item.title === route.query.type)
+  }
+  return collection
+})
 </script>
 
 <template>
   <Wrapper :top="true">
-    <HeadTitle :title="$t('pages.collection.title')" :style="1" />
+    <HeadTitle title="作品集" :style="1" />
     <div
-      v-for="(group, groupId) in collection"
+      v-for="(group, groupId) in data"
       :key="`link-group-${groupId}`"
       class="max-xs:w-full mx-auto mt-4 w-[65%] max-md:w-[85%]">
       <span class="ml-1 border-l-2 pl-3 text-lg font-normal">{{ group.title }}</span>
