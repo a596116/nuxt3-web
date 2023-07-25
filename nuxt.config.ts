@@ -64,7 +64,7 @@ export default defineNuxtConfig({
                 { name: 'keywords', content: `浩呆,浩呆前端,王教勛,王教勛前端,王浩呆` },
                 { property: 'og:title', content: `浩呆前端` },
                 { property: 'og:description', content: `熱愛技術的前端小白` },
-                { property: 'og:image', content: `https://upload.cc/i1/2023/02/08/tHrl3G.png` },
+                { property: 'og:image', content: `https://i.imgur.com/1zlVant.png` },
             ],
             link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
         },
