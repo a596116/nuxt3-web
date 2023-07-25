@@ -123,8 +123,8 @@ const dropdown = (type: boolean, cmenu?: any) => {
       <div
         v-if="childrenMenu.length"
         @click="childrenMenu = []"
-        class="center absolute h-[44px] w-[44px]">
-        <svg-icon name="left" class="h-[30px] w-[30px]"></svg-icon>
+        class="center absolute top-0 h-[44px] w-[44px]">
+        <svg-icon name="left" class="h-[30px] w-[30px] text-white"></svg-icon>
       </div>
       <div class="text-hd-white h-screen pt-[44px]">
         <!-- <Search type="open" class="my-4" /> -->
@@ -159,7 +159,8 @@ const dropdown = (type: boolean, cmenu?: any) => {
                 v-for="(item, i) in menus"
                 :key="i"
                 class="group flex cursor-pointer items-center font-bold duration-300">
-                <li class="menu flex h-full w-full px-10 py-2">
+                <li class="menu relative flex h-full w-full items-center px-10 py-2">
+                  <svg-icon name="plus" class="h-4 w-4 text-white"></svg-icon>
                   <Anchor
                     v-if="!item.children?.length"
                     :to="item.link ? item.link : undefined"
