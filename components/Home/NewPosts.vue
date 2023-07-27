@@ -1,5 +1,5 @@
 <template>
-  <main class="flex w-full flex-col">
+  <main class="flex w-full flex-col overflow-hidden">
     <article
       v-for="(post, index) in data?.posts"
       :key="index"
@@ -77,6 +77,7 @@ onMounted(() => {
         },
         ease: 'ease',
         opacity: 0,
+        scale: 0.8,
         x: 150,
       })
     } else {
@@ -89,6 +90,7 @@ onMounted(() => {
         },
         ease: 'ease',
         opacity: 0,
+        scale: 0.8,
         x: -150,
       })
     }
