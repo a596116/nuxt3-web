@@ -11,7 +11,7 @@
     :fade-effect="{ crossFade: true }"
     class="banner relative max-h-screen w-full rounded-[0px]">
     <swiper-slide v-for="item of content" :key="item.title">
-      <img :src="item.image" class="banner-bg parallax-bg block object-cover" />
+      <img :src="item.image" alt="浩呆" class="banner-bg parallax-bg block object-cover" />
       <div
         class="banner-inner text-hd-primary absolute flex flex-col"
         :class="{

@@ -11,6 +11,7 @@
         <NuxtImg
           format="webp"
           :src="post.img"
+          alt="浩呆"
           class="h-full w-full object-cover duration-500 group-hover:scale-110" />
       </Anchor>
       <section

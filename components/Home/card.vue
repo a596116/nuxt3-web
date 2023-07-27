@@ -55,12 +55,7 @@
               placement="bottom"
               v-for="item in skills"
               :key="item.name"> -->
-              <img
-                v-for="item in skills"
-                :key="item.name"
-                :src="item.img"
-                alt="haodai"
-                class="btn" />
+              <img v-for="item in skills" :key="item.name" :src="item.img" alt="浩呆" class="btn" />
               <!-- </el-tooltip> -->
             </div>
           </div>

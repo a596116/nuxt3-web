@@ -8,7 +8,10 @@
         style="
           background-image: url('https://media.altphotos.com/cache/images/2018/09/18/06/752/paper-table-sentences-.jpg');
         "></div>
-      <img class="introduce-avatar" src="https://s2.loli.net/2023/02/09/HcOiTjFn1KMCovu.jpg" />
+      <img
+        class="introduce-avatar"
+        src="https://s2.loli.net/2023/02/09/HcOiTjFn1KMCovu.jpg"
+        alt="浩呆" />
 
       <h1 class="introduce-fullname">
         王教勛

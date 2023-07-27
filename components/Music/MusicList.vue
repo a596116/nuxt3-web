@@ -41,7 +41,7 @@
             class="h-5 w-5"
             v-show="props.modelValue.id == index && props.playStatus"
             src="~/assets/img/music/wave.gif"
-            alt="123" />
+            alt="浩呆" />
         </div>
       </div>
     </div>

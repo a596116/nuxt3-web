@@ -5,6 +5,7 @@
         v-for="n in total"
         :key="n"
         :style="img(n - 1)"
+        alt="浩呆"
         :class="{ active: bgactive === n - 1 || bgpreactive === n - 1 }">
         <div class="drop-shadow">
           <div class="glass" :style="img(n - 1)"></div>
@@ -20,9 +21,9 @@
       <img
         src="https://s2.loli.net/2023/02/09/KeEFTM9tNlZmY3r.jpg"
         class="h-screen object-cover"
-        alt="" />
+        alt="浩呆" />
       <div class="absolute drop-shadow">
-        <img src="https://s2.loli.net/2023/02/09/KeEFTM9tNlZmY3r.jpg" class="glass" alt="" />
+        <img src="https://s2.loli.net/2023/02/09/KeEFTM9tNlZmY3r.jpg" class="glass" alt="浩呆" />
         <div class="title">
           <span class="text-5xl md:text-7xl">HaoDai </span>
           <span class="mt-4 text-2xl">熱愛前端的小白</span>
@@ -63,7 +64,7 @@ onNuxtReady(() => {
 <style scoped lang="scss">
 .bgList {
   @apply absolute z-0 hidden h-full w-full duration-500 md:block;
-  @apply top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%];
+  @apply left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%];
   list-style: none;
 
   li {

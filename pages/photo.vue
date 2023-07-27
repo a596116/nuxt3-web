@@ -6,6 +6,7 @@
           <el-image
             class="img"
             :src="song.cover"
+            alt="浩呆"
             :z-index="9999"
             :preview-teleported="true"
             :preview-src-list="Photo"

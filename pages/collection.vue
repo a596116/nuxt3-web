@@ -42,6 +42,7 @@ const data = computed(() => {
                 </span>
                 <img
                   :src="item.img"
+                  alt="浩呆"
                   class="h-[50px] w-[50px] rounded-[100%] p-2 shadow-[inset_0_0_10px_rgba(0,0,0,.3)]" />
               </div>
               <div
