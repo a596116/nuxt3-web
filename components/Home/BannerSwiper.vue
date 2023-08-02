@@ -56,7 +56,7 @@ const option: SwiperOptions = {
 
 const content = [
   {
-    title: '前端網頁工程師',
+    title: '前端網頁小白',
     image: 'https://i.imgur.com/YRWcNbY.jpg',
     align: 'center',
   },
