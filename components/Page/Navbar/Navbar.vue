@@ -51,10 +51,10 @@ const dropdown = (type: boolean, cmenu?: any) => {
   <NavbarBuilder>
     <template #menu>
       <div
-        class="navbar box-border hidden w-full flex-col items-start justify-center text-white lg:flex"
+        class="navbar box-border hidden w-full flex-col items-center justify-center text-white lg:flex"
         :class="{ active: isOpen }"
         @mouseleave="dropdown(false)">
-        <nav class="h-full w-full text-xs leading-6" role="navigation">
+        <nav class="h-full w-full max-w-[1024px] text-xs leading-6" role="navigation">
           <ul class="flex h-[44px] w-full flex-wrap items-center justify-between">
             <Anchor to="/" class="flex items-center" @mouseenter="dropdown(false)">
               <svg-icon name="logo-1" class="h-7 w-7"></svg-icon>

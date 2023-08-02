@@ -13,9 +13,11 @@ const { data, pending } = useAsyncData(`notion-${route.params.id}`, async () => 
       return map
     }, new Array())
   })
+  // const title = pageTable.find((item: any) => item.slug === route.params.id).Title
   return $notion.getPageBlocks(route.params.id.toString())
 })
 const { mapPageUrl, pageLinkOptions } = useProps()
+console.log(mapPageUrl, pageLinkOptions.value)
 
 const index = lists.value.findIndex((item: any) => item === route.params.id)
 const actions = {
