@@ -58,6 +58,8 @@ export default defineNuxtConfig({
         head: {
             meta: [
                 { name: 'google-site-verification', content: 'HVPSQ5axRBDcKliZ0EImWpYUZqoO60djgGGj9nEC6Kc' },
+                { name: 'robots', content: 'index,follow' },
+                { name: 'googlebot', content: 'index,follow' },
                 { name: 'viewport', content: 'width=device-width, initial-scale=1' },
                 { name: 'description', content: `浩呆前端` },
                 { name: 'description', content: `熱愛技術的前端小白` },
