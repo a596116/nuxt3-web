@@ -47,6 +47,7 @@ export default defineNuxtConfig({
         'nuxt-lodash',
         '@vueuse/nuxt',
         '@nuxt/image-edge',
+        '@nuxtjs/robots'
     ],
     // sitemap: sitemap,
 
@@ -80,6 +81,14 @@ export default defineNuxtConfig({
             fallbackLocale: 'zh',
             availableLocales: ['en', 'zh'],
         },
+    },
+    robots: {
+        rules: [
+            {
+                UserAgent: '*',
+                Disallow: '/'
+            }
+        ]
     },
 
     // vite

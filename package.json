@@ -11,17 +11,18 @@
   },
   "devDependencies": {
     "@element-plus/nuxt": "^1.0.5",
-    "@nuxt/devtools": "^0.6.6",
-    "@vueuse/nuxt": "^10.1.2",
     "@iconify/json": "^2.2.18",
     "@janniks/vue3-katex": "0.6.0-rc.5.1",
+    "@nuxt/devtools": "^0.6.6",
     "@nuxt/image-edge": "1.0.0-rc.1-28164352.ad7c010",
+    "@nuxtjs/robots": "^3.0.0",
     "@types/katex": "^0.16.0",
     "@types/prismjs": "^1.26.0",
+    "@vueuse/nuxt": "^10.1.2",
     "gsap": "^3.12.2",
     "nuxt": "^3.6.5",
-    "vite-plugin-svg-icons": "^2.0.1",
     "swiper": "^9.3.2",
+    "vite-plugin-svg-icons": "^2.0.1",
     "vue-awesome-swiper": "^5.0.1"
   },
   "dependencies": {
