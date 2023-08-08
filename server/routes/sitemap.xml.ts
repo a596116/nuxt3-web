@@ -4,7 +4,7 @@ export default defineEventHandler(async (event) => {
     // const docs = await serverQueryContent(event).find()
     event.res.setHeader('Content-Type', 'application/xml')
     const sitemap = new SitemapStream({
-        hostname: 'https://wanghaodai.com',
+        hostname: 'https://www.wanghaodai.com',
 
     })
     const page = ['/', 'about', 'collection', 'posts', 'music']
