@@ -7,12 +7,14 @@ export default defineEventHandler(async (event) => {
         hostname: 'https://www.wanghaodai.com',
 
     })
-    const page = ['/', 'about', 'collection', 'posts', 'music']
+    const page = ['/', 'about/', 'collection/', 'posts/', 'music/']
     // for (const doc of docs) {
     page.forEach((doc) => {
         sitemap.write({
             url: doc,
             changefreq: 'daily',
+            lastmod: new Date().toISOString(),
+            priority: 1.0,
         })
     })
     // }
