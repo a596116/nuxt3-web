@@ -9,12 +9,12 @@ export default defineEventHandler(async (event) => {
     })
     const page = ['/', 'about/', 'collection/', 'posts/', 'music/']
     // for (const doc of docs) {
-    page.forEach((doc) => {
+    page.forEach((doc, index) => {
         sitemap.write({
             url: doc,
             changefreq: 'daily',
             lastmod: new Date().toISOString(),
-            priority: 1.0,
+            priority: index == 0 ? 1.0 : 0.8,
         })
     })
     // }
