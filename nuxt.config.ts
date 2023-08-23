@@ -58,7 +58,7 @@ export default defineNuxtConfig({
         layoutTransition: { name: 'layout', mode: 'out-in' },
         head: {
             meta: [
-                { name: 'google-site-verification', content: 'y7pfXihCI46HENtaw918zrV39v0ne45d4Usvpy9e7' },
+                { name: 'google-site-verification', content: 'y7pfXihCI46HENtaw918zrV39v0ne45d4Usvpy9e7-8' },
                 { name: 'robots', content: 'index,follow' },
                 { name: 'googlebot', content: 'index,follow' },
                 { name: 'viewport', content: 'width=device-width, initial-scale=1' },
