@@ -2,22 +2,16 @@
 // composable
 const { t } = useLang()
 
-useHead(() => ({
+useSeoMeta({
   title: capitalize(t('pages.index.title')),
-  meta: [
-    {
-      name: 'description',
-      content: '浩呆前湍開發',
-    },
-  ],
-}))
+})
 </script>
 
 <template>
   <div class="">
     <!-- Banner -->
     <BannerSwiper />
-    <gsap />
+    <!-- <gsap /> -->
     <Wrapper class="bg-ec-bg flex-1 flex-col items-center gap-14 px-1" :top="false">
       <NewPosts />
     </Wrapper>

@@ -14,7 +14,7 @@ export default defineEventHandler(async (event) => {
             url: doc,
             changefreq: 'daily',
             lastmod: new Date().toISOString(),
-            priority: index == 0 ? 1.0 : 0.8,
+            priority: index == 0 ? 1.0 : 0.9,
         })
     })
     // }

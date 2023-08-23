@@ -58,14 +58,13 @@ export default defineNuxtConfig({
         layoutTransition: { name: 'layout', mode: 'out-in' },
         head: {
             meta: [
-                { name: 'google-site-verification', content: 'rNwracvvThkYBfPQRGPbbmHV09iWp5AURZgBhRw2bTU' },
+                { name: 'google-site-verification', content: 'y7pfXihCI46HENtaw918zrV39v0ne45d4Usvpy9e7' },
                 { name: 'robots', content: 'index,follow' },
                 { name: 'googlebot', content: 'index,follow' },
                 { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-                { name: 'description', content: `浩呆前端` },
-                { name: 'description', content: `熱愛技術的前端小白` },
-                { name: 'keywords', content: `浩呆,浩呆前端,王教勛,王教勛前端,王浩呆,haodai,wanghaodai,前端工程師,網頁` },
-                { property: 'og:title', content: `浩呆前端` },
+                { name: 'description', content: `浩呆,浩呆前端,王教勛,王教勛前端,王浩呆,haodai,wanghaodai,前端工程師,網頁,浩呆部落格,浩呆Blog,twhaodai` },
+                { name: 'keywords', content: `浩呆,浩呆前端,王教勛,王教勛前端,王浩呆,haodai,wanghaodai,前端工程師,網頁,浩呆部落格,浩呆Blog,twhaodai` },
+                { property: 'og:title', content: `王浩呆` },
                 { property: 'og:description', content: `熱愛技術的網頁前端工程師` },
                 { property: 'og:image', content: `https://i.imgur.com/1zlVant.png` },
             ],

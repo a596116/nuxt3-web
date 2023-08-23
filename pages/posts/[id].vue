@@ -4,6 +4,7 @@ const { $notion } = useNuxtApp()
 
 const lists = useState<string[]>('postList', () => ['1'])
 
+const a = ref('')
 const { data, pending } = useAsyncData(`notion-${route.params.id}`, async () => {
   const pageTable = await $notion.getPageTable('d324bdb8357444f78cde3ddae3b6bdcb')
   const posts = pageTable.sort((a: any, b: any) => a.Date - b.Date)
@@ -13,11 +14,13 @@ const { data, pending } = useAsyncData(`notion-${route.params.id}`, async () => 
       return map
     }, new Array())
   })
-  // const title = pageTable.find((item: any) => item.slug === route.params.id).Title
+  const title = pageTable.find((item: any) => item.slug === route.params.id).Title
+  console.log(title)
+  document.title = `${title} - 浩呆前端`
   return $notion.getPageBlocks(route.params.id.toString())
 })
 const { mapPageUrl, pageLinkOptions } = useProps()
-console.log(mapPageUrl, pageLinkOptions.value)
+// console.log(mapPageUrl, pageLinkOptions.value)
 
 const index = lists.value.findIndex((item: any) => item === route.params.id)
 const actions = {

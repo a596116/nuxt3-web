@@ -13,12 +13,6 @@
 const { t } = useLang()
 useHead(() => ({
   title: capitalize(t('pages.about.title')),
-  meta: [
-    {
-      name: 'description',
-      content: '關於浩呆',
-    },
-  ],
 }))
 </script>
 

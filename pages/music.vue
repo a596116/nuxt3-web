@@ -12,11 +12,5 @@ definePageMeta({
 })
 useHead(() => ({
   title: 'Music',
-  meta: [
-    {
-      name: 'description',
-      content: '浩呆音樂播放器',
-    },
-  ],
 }))
 </script>

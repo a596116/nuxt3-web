@@ -3,12 +3,6 @@ import { collection } from '~/content/collection'
 
 useHead(() => ({
   title: '作品集',
-  meta: [
-    {
-      name: 'description',
-      content: '浩呆作品集',
-    },
-  ],
 }))
 const route = useRoute()
 
