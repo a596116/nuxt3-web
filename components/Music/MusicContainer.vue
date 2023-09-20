@@ -1,22 +1,23 @@
 <template>
-  <div class="h-full">
+  <main class="flex h-[calc(100vh-60px)] flex-col gap-6">
     <MusicList
       :songList="musicStore.musicLists"
       :playStatus="state.playing"
       :model-value="musicStore.musicInfo"
-      @PlayThisMusic="PlayThisMusic" />
+      @PlayThisMusic="PlayThisMusic"
+      class="h-[calc(100%-130px-30px)]" />
     <!-- 播放器 -->
     <div
-      class="fixed bottom-0 mx-16 mb-14 box-border flex h-[130px] w-[calc(100%-128px)] items-center justify-between rounded-2xl bg-white shadow-lg max-lg:mx-0 max-lg:mb-0 max-lg:w-full max-lg:rounded-none md:px-[28px]"
+      class="mb-14 box-border flex h-[130px] w-full items-center justify-between rounded-lg bg-white py-2 shadow-lg max-lg:mx-0 max-lg:mb-0 max-lg:w-full max-lg:rounded-none md:px-[28px]"
       @click="state.openMenu = !state.openMenu">
       <audio :src="musicStore.musicInfo.url" ref="audio"></audio>
       <el-image
         class="hidden h-24 w-24 rounded-2xl lg:block"
         :src="musicStore.musicInfo.cover"></el-image>
 
-      <section class="flex flex-1 flex-col pl-6 max-sm:pl-0">
+      <section class="relative flex flex-1 flex-col pl-6 max-sm:pl-0">
         <div class="flex flex-wrap items-center justify-between max-sm:flex-col">
-          <div class="flex items-center gap-6">
+          <div class="flex items-center gap-6 md:w-1/3">
             <span>{{ musicStore.musicInfo.name }}</span>
             <!-- 模式 -->
             <div class="text-hd-primary mr-3 cursor-pointer text-lg duration-150 hover:scale-110">
@@ -33,7 +34,7 @@
 
           <!-- 控制按鈕 -->
           <div
-            class="box-border flex h-full w-[240px] items-center justify-between px-5 max-sm:mt-3">
+            class="box-border flex h-full w-[240px] items-center justify-between px-5 max-sm:mt-3 md:absolute md:left-1/2 md:-translate-x-1/2">
             <svg-icon
               name="arrow_left"
               class="h-10 w-10 cursor-pointer duration-150 hover:scale-110"
@@ -79,7 +80,7 @@
         </div>
       </section>
     </div>
-  </div>
+  </main>
 </template>
 
 <script setup lang="ts">

@@ -1,7 +1,7 @@
 <template>
   <!-- <Wrapper> -->
   <swiper
-    :speed="600"
+    :speed="900"
     :parallax="true"
     :autoplay="option.autoplay"
     :pagination="option.pagination"

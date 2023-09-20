@@ -1,8 +1,7 @@
 <template>
-  <div
-    class="relative flex h-full w-[100%] flex-1 items-center gap-6 px-8 max-lg:flex-col max-lg:px-0">
-    <div
-      class="disc-continer relative flex h-[30%] w-full flex-col items-center justify-center max-lg:hidden md:h-full md:w-[40%]">
+  <main class="relative flex w-[100%] flex-1 items-center gap-6 max-lg:flex-col">
+    <section
+      class="disc-continer relative flex h-[30%] w-full flex-col items-center justify-center transition-all duration-200 max-lg:hidden md:h-full md:w-[40%]">
       <div class="poster relative h-full min-w-[380px] rounded-2xl md:h-[280px]" ref="rotate">
         <el-image :src="props.modelValue.cover" class="h-full w-full duration-200"></el-image>
       </div>
@@ -14,10 +13,10 @@
         class="mt-1 h-10 w-full text-center text-xl font-semibold leading-10 md:mt-6 md:text-3xl">
         {{ props.modelValue.artistsName }}
       </span>
-    </div>
+    </section>
 
-    <div
-      class="max-h-[600px] w-full flex-1 overflow-auto rounded-2xl p-5 shadow-lg max-lg:max-h-[calc(100vh-190px)] max-lg:rounded-none max-sm:p-1 lg:w-[60%]">
+    <section
+      class="h-full w-full flex-1 overflow-auto rounded-lg border p-5 shadow-lg max-lg:rounded-none max-sm:p-1 lg:w-[60%]">
       <div
         class="sm:hover:bg-hd-hover my-2 mb-1 flex w-full cursor-pointer items-center justify-around rounded-xl px-4 py-2 duration-150 hover:shadow-sm max-sm:px-1 max-sm:text-sm"
         :class="{ 'bg-hd-hover shadow-lg': props.modelValue.id == index }"
@@ -25,12 +24,10 @@
         :key="item.id"
         @click="PlayThisMusic(index)">
         <div class="relative">
-          <el-image class="ml-4 h-14 w-14 rounded" fit="cover" :src="item.cover">
-            <!-- <span class="center h-8 w-8" v-if="props.modelValue.id == index && props.playStatus"> -->
-          </el-image>
+          <el-image class="ml-4 h-14 w-14 rounded" fit="cover" :src="item.cover"> </el-image>
           <span
             v-if="props.modelValue.id == index && props.playStatus"
-            class="center bg-hd-primary absolute left-0 top-0 ml-4 h-14 w-14 duration-300">
+            class="center bg-hd-primary absolute left-0 top-0 ml-4 h-14 w-14 bg-opacity-10 duration-300">
             <svg-icon name="volume_up" color="#fff" class="fill-white text-white"></svg-icon>
           </span>
         </div>
@@ -44,8 +41,8 @@
             alt="浩呆" />
         </div>
       </div>
-    </div>
-  </div>
+    </section>
+  </main>
 </template>
 <script setup lang="ts">
 const props = defineProps<{

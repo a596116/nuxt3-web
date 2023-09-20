@@ -160,7 +160,10 @@ const dropdown = (type: boolean, cmenu?: any) => {
                 :key="i"
                 class="group flex cursor-pointer items-center font-bold duration-300">
                 <li class="menu relative flex h-full w-full items-center px-10 py-2">
-                  <svg-icon name="plus" class="h-4 w-4 text-white"></svg-icon>
+                  <svg-icon
+                    v-if="item.children?.length"
+                    name="plus"
+                    class="h-4 w-4 text-white"></svg-icon>
                   <Anchor
                     v-if="!item.children?.length"
                     :to="item.link ? item.link : undefined"
