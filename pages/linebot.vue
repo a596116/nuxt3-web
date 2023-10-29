@@ -62,7 +62,7 @@ const state = reactive({
 
 onMounted(() => {
   liff
-    .init({ liffId: '1657518005-7QdAdD6y' })
+    .init({ liffId: '1657518005-n0BMBGqY' })
     .then(() => {
       const os = liff.getOS()
       if (!liff.isLoggedIn() && os !== 'web') {
