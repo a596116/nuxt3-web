@@ -1,0 +1,14 @@
+// input number
+.el-input-number {
+  .el-input-number__decrease {
+    border-right: 0px;
+    background: none;
+  }
+  .el-input-number__increase {
+    border-left: 0px;
+    background: none;
+  }
+  .el-input__wrapper {
+    background-color: transparent;
+  }
+}

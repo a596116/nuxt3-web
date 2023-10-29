@@ -1,0 +1,79 @@
+.el-dialog {
+  border-radius: 20px !important;
+  overflow: initial !important;
+
+  // 關閉按鈕
+  .el-dialog__headerbtn {
+    @apply text-hd-black-50 -right-[6px] -top-[6px] z-[100] flex h-auto w-auto rounded-[12px] duration-150;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1) !important;
+    background-color: #fff;
+    &:hover {
+      box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+      transform: translate(-2px, 2px);
+      .el-icon {
+        @apply text-hd-black;
+      }
+    }
+    .el-icon {
+      @apply text-hd-black-50 h-[34px] w-[34px] duration-150;
+    }
+  }
+  // 底部按鈕
+  .el-dialog__footer {
+    justify-content: flex-end !important;
+    .el-button {
+      @apply relative border-0 bg-transparent;
+      span {
+        z-index: 1;
+      }
+      &::before {
+        content: '';
+        @apply absolute left-0 top-0 z-0 h-full w-full;
+        background-color: color-mix(in srgb, var(--hd-black-50) 10%, transparent);
+        border-radius: inherit;
+        pointer-events: none;
+        transition: all 0.25s ease;
+        z-index: 1;
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      &:hover {
+        &::before {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      &:hover,
+      &:focus {
+        @apply text-hd-black;
+      }
+    }
+    .el-button--primary {
+      @apply text-hd-primary relative border-0 bg-transparent;
+      span {
+        z-index: 1;
+      }
+      &::before {
+        content: '';
+        @apply absolute left-0 top-0 z-0 h-full w-full;
+        background-color: color-mix(in srgb, var(--hd-primary-hover) 20%, transparent);
+        border-radius: inherit;
+        pointer-events: none;
+        transition: all 0.25s ease;
+        z-index: 1;
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      &:hover {
+        &::before {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      &:hover,
+      &:focus {
+        @apply text-hd-primary;
+      }
+    }
+  }
+}

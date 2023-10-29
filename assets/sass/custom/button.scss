@@ -1,0 +1,85 @@
+// button
+.el-button:hover,
+.el-button:focus {
+  background-color: #aabe99 !important;
+  color: #fff !important;
+  border: 1px solid #aabe99 !important;
+}
+.el-button {
+  --el-button-hover-text-color: var(--hd-primary) !important;
+  --el-button-active-text-color: var(--hd-primary) !important;
+  --el-button-hover-border-color: var(--hd-primary) !important;
+  --el-button-active-border-color: #ffffff00 !important;
+  --el-button-outline-color: #ffffff00 !important;
+  --el-button-hover-bg-color: #ffffff00 !important;
+}
+.el-button--primary {
+  --el-button-bg-color: var(--hd-primary) !important;
+  --el-button-hover-text-color: var(--el-color-white) !important;
+  --el-button-border-color: var(--hd-primary) !important;
+  --el-button-outline-color: var(--hd-primary) !important;
+  --el-button-active-color: var(--hd-primary) !important;
+  --el-button-hover-link-text-color: var(--el-color-primary-light-5) !important;
+  --el-button-hover-bg-color: var(--hd-primary-hover) !important;
+  --el-button-hover-border-color: var(--hd-primary-hover) !important;
+  --el-button-active-text-color: var(--el-color-white) !important;
+  --el-button-active-bg-color: var(--hd-primary-active) !important;
+  --el-button-active-border-color: var(--hd-primary-active) !important;
+  --el-button-disabled-bg-color: var(--hd-disable) !important;
+  --el-button-disabled-border-color: var(--hd-disable) !important;
+}
+
+.el-button.is-text:not(.is-disabled):focus,
+.el-button.is-text:not(.is-disabled):hover {
+  background-color: transparent;
+}
+
+.el-button--default.is-text {
+  @apply relative;
+  &::before {
+    content: '';
+    @apply absolute left-0 top-0 z-0 h-full w-full;
+    background-color: color-mix(in srgb, var(--hd-black-50) 10%, transparent);
+    border-radius: inherit;
+    pointer-events: none;
+    transition: all 0.25s ease;
+    z-index: 1;
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  &:hover {
+    &::before {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  &:hover,
+  &:focus {
+    @apply text-hd-black;
+  }
+}
+
+.el-button--primary.is-text {
+  @apply relative;
+  &::before {
+    content: '';
+    @apply absolute left-0 top-0 z-0 h-full w-full;
+    background-color: color-mix(in srgb, var(--hd-primary-hover) 20%, transparent);
+    border-radius: inherit;
+    pointer-events: none;
+    transition: all 0.25s ease;
+    z-index: 1;
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  &:hover {
+    &::before {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  &:hover,
+  &:focus {
+    @apply text-hd-primary;
+  }
+}

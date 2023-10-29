@@ -13,6 +13,7 @@
     "@element-plus/nuxt": "^1.0.5",
     "@iconify/json": "^2.2.18",
     "@janniks/vue3-katex": "0.6.0-rc.5.1",
+    "@line/liff": "^2.22.4",
     "@nuxt/devtools": "^0.6.6",
     "@nuxt/image-edge": "1.0.0-rc.1-28164352.ad7c010",
     "@nuxtjs/robots": "^3.0.0",
@@ -26,9 +27,7 @@
     "vue-awesome-swiper": "^5.0.1"
   },
   "dependencies": {
-    "@intlify/nuxt3": "^0.2.4",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
-    "@nuxtjs/i18n": "8.0.0-beta.9",
     "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/tailwindcss": "^6.3.1",
     "@pinia-plugin-persistedstate/nuxt": "^1.1.1",

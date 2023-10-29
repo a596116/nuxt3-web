@@ -27,7 +27,7 @@
 const props = withDefaults(
   defineProps<{
     title: string
-    style?: number
+    style?: 1 | 2 | 3 | 4
     bgColor?: string
   }>(),
   {

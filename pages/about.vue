@@ -10,9 +10,8 @@
 </template>
 
 <script setup lang="ts">
-const { t } = useLang()
 useHead(() => ({
-  title: capitalize(t('pages.about.title')),
+  title: '關於',
 }))
 </script>
 

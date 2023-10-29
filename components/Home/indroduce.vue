@@ -21,9 +21,11 @@
     <div class="introduce-main">
       <div class="introduce-section is-active" id="about">
         <div class="introduce-content">
-          <div class="introduce-subtitle">{{ t('pages.index.about.title') }}</div>
+          <div class="introduce-subtitle">關於</div>
           <p class="introduce-desc">
-            {{ t('pages.index.about.description') }}
+            畢業於靜宜大學 資料科學暨大數據分析與應用學系。
+            擅長於前端技術並熟悉使用Vue.js框架、Git版控開發網站。
+            在後端方面也會使用Nodjs搭配egg串接RestfulAPI，也使用過Django開發LineBot
           </p>
         </div>
         <div class="introduce-social">
@@ -37,38 +39,30 @@
       </div>
       <div class="introduce-section" id="experience">
         <div class="introduce-content">
-          <div class="introduce-subtitle">{{ t('pages.index.experience.title') }}</div>
+          <div class="introduce-subtitle">經歷</div>
           <div class="introduce-timeline">
             <div class="introduce-item" data-year="2023">
-              <div class="introduce-item-title">{{ t('pages.index.experience.2023.title') }}</div>
-              <div class="introduce-item-desc">
-                {{ t('pages.index.experience.2023.description') }}
-              </div>
+              <div class="introduce-item-title">工作中</div>
+              <div class="introduce-item-desc">尚玄國際股份有限公司-前端工程師</div>
             </div>
             <div class="introduce-item" data-year="2018">
-              <div class="introduce-item-title">{{ t('pages.index.experience.2018.title') }}</div>
-              <div class="introduce-item-desc">
-                {{ t('pages.index.experience.2018.description') }}
-              </div>
+              <div class="introduce-item-title">靜宜大學</div>
+              <div class="introduce-item-desc">資料科學暨大數據分析與應用學系</div>
             </div>
             <div class="introduce-item" data-year="2014">
-              <div class="introduce-item-title">{{ t('pages.index.experience.2014.title') }}</div>
-              <div class="introduce-item-desc">
-                {{ t('pages.index.experience.2014.description') }}
-              </div>
+              <div class="introduce-item-title">永豐高中</div>
+              <div class="introduce-item-desc">普通班</div>
             </div>
             <div class="introduce-item" data-year="2011">
-              <div class="introduce-item-title">{{ t('pages.index.experience.2011.title') }}</div>
-              <div class="introduce-item-desc">
-                {{ t('pages.index.experience.2011.description') }}
-              </div>
+              <div class="introduce-item-title">永豐國中</div>
+              <div class="introduce-item-desc">普通班</div>
             </div>
           </div>
         </div>
       </div>
       <div class="introduce-section" id="contact">
         <div class="introduce-content">
-          <div class="introduce-subtitle">{{ t('pages.index.contact') }}</div>
+          <div class="introduce-subtitle">聯絡資訊</div>
           <div class="introduce-contact-wrapper">
             <div class="introduce-contact">
               <svg-icon
@@ -87,22 +81,15 @@
         </div>
       </div>
       <div class="introduce-buttons">
-        <button data-section="#about" class="is-active" @click="handleButtonClick">
-          {{ t('pages.index.about.title') }}
-        </button>
-        <button data-section="#experience" @click="handleButtonClick">
-          {{ t('pages.index.experience.title') }}
-        </button>
-        <button data-section="#contact" @click="handleButtonClick">
-          {{ t('pages.index.contact') }}
-        </button>
+        <button data-section="#about" class="is-active" @click="handleButtonClick">關於</button>
+        <button data-section="#experience" @click="handleButtonClick">經歷</button>
+        <button data-section="#contact" @click="handleButtonClick">聯絡資訊</button>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-const { t } = useLang()
 const handleButtonClick = (e: any) => {
   let buttons = document.querySelectorAll<HTMLElement>('.introduce-buttons button')
   let sections = document.querySelectorAll<HTMLElement>('.introduce-section')

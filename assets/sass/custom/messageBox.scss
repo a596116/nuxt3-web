@@ -1,0 +1,97 @@
+// mesBox
+.el-message-box {
+  border-radius: 20px !important;
+  overflow: initial !important;
+}
+// 關閉按鈕
+.el-message-box__headerbtn {
+  @apply text-hd-black-50 z-[100] flex rounded-[12px] duration-150;
+  right: -6px !important;
+  top: -6px !important;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1) !important;
+  background-color: #fff !important;
+  &:hover {
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1) !important;
+    transform: translate(-2px, 2px) !important;
+    .el-icon {
+      color: var(--hd-black) !important;
+    }
+  }
+  .el-icon {
+    color: var(--hd-black-50) !important;
+    height: 34px !important;
+    width: 34px !important;
+    transition-duration: 150ms !important;
+  }
+}
+// 底部按鈕
+.el-message-box__btns {
+  justify-content: flex-end !important;
+  .cancelBtn {
+    position: relative !important;
+    border: 0 !important;
+    background-color: transparent !important;
+    span {
+      z-index: 1;
+    }
+    &::before {
+      content: '';
+      position: absolute !important;
+      left: 0 !important;
+      top: 0 !important;
+      height: 100% !important;
+      width: 100% !important;
+      background-color: color-mix(in srgb, var(--hd-black) 20%, transparent) !important;
+      border-radius: inherit !important;
+      pointer-events: none !important;
+      transition: all 0.25s ease !important;
+      z-index: 1 !important;
+      transform: scale(0.5) !important;
+      opacity: 0 !important;
+    }
+    &:hover {
+      &::before {
+        transform: scale(1) !important;
+        opacity: 1 !important;
+      }
+    }
+    &:hover,
+    &:focus {
+      color: var(--hd-black) !important;
+    }
+  }
+  .confirmBtn {
+    color: var(--hd-primary) !important;
+    position: relative !important;
+    border: 0 !important;
+    background-color: transparent !important;
+    span {
+      z-index: 1;
+    }
+    &::before {
+      content: '';
+      position: absolute !important;
+      left: 0 !important;
+      top: 0 !important;
+      height: 100% !important;
+      width: 100% !important;
+      background-color: color-mix(in srgb, var(--hd-primary-hover) 40%, transparent) !important;
+      border-radius: inherit !important;
+      pointer-events: none !important;
+      transition: all 0.25s ease !important;
+      z-index: 1 !important;
+      transform: scale(0.5) !important;
+      opacity: 0 !important;
+    }
+    &:hover {
+      &::before {
+        transform: scale(1) !important;
+        opacity: 1 !important;
+      }
+    }
+    &:hover,
+    &:focus {
+      color: var(--hd-black) !important;
+    }
+  }
+}

@@ -1,10 +1,7 @@
-import { LanguageManager } from './lang'
-
 export function AppSetup() {
   // use theme manager
 
   // use language manager
-  const languageManager = LanguageManager()
 
   // vue transition bug handle
   const messages = [
@@ -21,7 +18,4 @@ export function AppSetup() {
   }
 
   // return
-  return {
-    languageManager,
-  }
 }

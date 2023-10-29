@@ -1,0 +1,15 @@
+.el-date-table {
+  --el-datepicker-active-color: var(--hd-primary);
+  --el-datepicker-hover-text-color: var(--hd-primary);
+}
+.el-date-picker__header-label {
+  --el-datepicker-hover-text-color: var(--hd-primary);
+}
+.el-picker-panel__icon-btn {
+  --el-datepicker-hover-text-color: var(--hd-primary);
+}
+.el-year-table,
+.el-month-table {
+  --el-datepicker-hover-text-color: var(--hd-primary);
+  --el-datepicker-active-color: var(--hd-success);
+}

@@ -1,8 +1,18 @@
+@use './custom/badge.scss' as *;
+@use './custom/button.scss' as *;
+@use './custom/form.scss' as *;
+@use './custom/input.scss' as *;
+@use './custom/messageBox.scss' as *;
+@use './custom/notification.scss' as *;
+@use './custom/datePick.scss' as *;
+@use './custom/dialog.scss' as *;
 :root {
   //---------------------------------------------
   // 變量
   //---------------------------------------------
   --hd-primary: #c9dbb2;
+  --hd-primary-hover: #a7c983;
+  --hd-primary-active: #6c9046;
   --hd-secondary: #ffeeb3;
   --hd-success: #aed8cc;
   --hd-danger: #dc3545;
