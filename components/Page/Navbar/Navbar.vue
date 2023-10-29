@@ -3,7 +3,6 @@ import gsap from 'gsap'
 import { menus } from '~/content/menus'
 
 const childrenMenu = ref<any[]>([])
-
 const handleClickMenu = (cmenu: any) => {
   childrenMenu.value = cmenu
 }
