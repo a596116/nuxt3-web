@@ -1,5 +1,5 @@
 # FROM node:lts-alpine
-FROM keymetrics/pm2:latest-alpine
+FROM treehouses/pm2-tags
 
 # 設定工作目錄
 WORKDIR /app
