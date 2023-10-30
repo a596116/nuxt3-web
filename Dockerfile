@@ -12,9 +12,7 @@ MAINTAINER haodai
 # COPY pnpm-lock.yaml .
 
 # 複製所有
-# COPY . .
-COPY .output .
-COPY ecosystem.config.js .
+COPY . .
 
 # 依照指定版本安裝依賴
 # RUN npm install -g pnpm
