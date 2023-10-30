@@ -11,11 +11,6 @@ module.exports = {
         PORT: 3000, //指定伺服器上的 port
         NODE_ENV: 'prod',
       },
-      env_sit: {
-        name: 'haodai_sit',
-        PORT: 3000, //指定伺服器上的 port
-        NODE_ENV: 'sit',
-      },
     },
   ],
 }
