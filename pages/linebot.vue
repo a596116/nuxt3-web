@@ -6,8 +6,10 @@
       label-width="auto"
       label-position="left"
       class="hd-form p-4">
-      <HeadTitle title="開啟自動推播" class="mb-10"></HeadTitle>
-      <!-- <div class="flex items-center justify-center">{{ state.profile.userId }}</div> -->
+      <HeadTitle title="開啟自動推播" class="mb-4 text-[#164863]"></HeadTitle>
+      <span class="mb-4 flex items-center justify-center text-lg text-[#427D9D]">{{
+        state.profile.displayName
+      }}</span>
       <section class="flex h-full w-full flex-col gap-6">
         <el-form-item label="NIKE 發售預告">
           <el-switch v-model="state.form.nike_broadcast" active-text="開啟" inactive-text="關閉" />
@@ -59,13 +61,11 @@ const state = reactive({
     ithome_broadcast: false,
   },
 })
-
 onMounted(() => {
   liff
     .init({ liffId: '1657518005-n0BMBGqY' })
     .then(() => {
-      const os = liff.getOS()
-      if (!liff.isLoggedIn() && os !== 'web') {
+      if (!liff.isLoggedIn()) {
         liff.login()
       }
       handleFetch()

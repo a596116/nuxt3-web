@@ -47,7 +47,7 @@ const fetch = async <T>(url: UrlType, options?: any, headers?: any) => {
   try {
     // 3.0正式版环境变量要从useRuntimeConfig里的public拿
     const {
-      public: { apiBase, domain },
+      public: { apiBase },
     } = useRuntimeConfig()
     const reqUrl = apiBase + url // 你的接口地址
     // 设置key

@@ -6,6 +6,7 @@ export const createRuntimeConfig = (): NuxtConfig['runtimeConfig'] => {
     public: {
       apiBase: viteEnv.VITE_APP_BASE_URL,
       appTitle: viteEnv.VITE_APP_TITLE,
+      liffId: viteEnv.VITE_LIFF_ID,
     },
   }
 }
