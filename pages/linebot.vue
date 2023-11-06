@@ -114,6 +114,12 @@ const handleSubmit = () => {
           })
           .then(() => {
             liff.closeWindow()
+            liff.sendMessages([
+              {
+                type: 'text',
+                text: '設定成功',
+              },
+            ])
           })
           .catch(() => {
             handleFetch()
