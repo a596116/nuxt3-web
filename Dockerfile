@@ -5,8 +5,6 @@ FROM keymetrics/pm2:18-alpine
 WORKDIR /app
 
 # 作者
-MAINTAINER haodai
-
 # 複製 package.json 和 package-lock.json 至工作目錄
 # COPY package*.json .
 # COPY pnpm-lock.yaml .
@@ -22,7 +20,7 @@ COPY . .
 
 # 建立生產版本
 # RUN pnpm run build
-
+ENV TZ="Asia/Taipei"
 # 暴露的連接埠
 EXPOSE 3000
 
