@@ -10,22 +10,39 @@
       <span class="mb-4 flex items-center justify-center text-lg text-[#427D9D]">{{
         state.profile.displayName
       }}</span>
-      <section class="flex h-full w-full flex-col gap-6">
-        <el-form-item label="NIKE 發售預告">
-          <el-switch v-model="state.form.nike_broadcast" active-text="開啟" inactive-text="關閉" />
-        </el-form-item>
-        <el-form-item label="Hypebeast 球鞋資訊">
-          <el-switch
-            v-model="state.form.hypebeast_broadcast"
-            active-text="開啟"
-            inactive-text="關閉" />
-        </el-form-item>
-        <el-form-item label="IThome 新聞">
-          <el-switch
-            v-model="state.form.ithome_broadcast"
-            active-text="開啟"
-            inactive-text="關閉" />
-        </el-form-item>
+      <section class="flex h-full w-full flex-col gap-4">
+        <article>
+          <span class="text-small text-hd-black-50"
+            >每天中午 12:05 會自動推播隔天發售的球鞋資訊</span
+          >
+          <el-form-item label="NIKE 發售預告" class="pt-1">
+            <el-switch
+              v-model="state.form.nike_broadcast"
+              active-text="開啟"
+              inactive-text="關閉" />
+          </el-form-item>
+          <hr class="text-hd-black" />
+        </article>
+        <article>
+          <span class="text-small text-hd-black-50">每小時的5分會推播最新Hypebeast球鞋資訊</span>
+          <el-form-item label="Hypebeast 球鞋資訊" class="pt-1">
+            <el-switch
+              v-model="state.form.hypebeast_broadcast"
+              active-text="開啟"
+              inactive-text="關閉" />
+          </el-form-item>
+          <hr class="text-hd-black" />
+        </article>
+        <article>
+          <span class="text-small text-hd-black-50">每小時的5分會推播最新IThome新聞</span>
+          <el-form-item label="IThome 新聞" class="pt-1">
+            <el-switch
+              v-model="state.form.ithome_broadcast"
+              active-text="開啟"
+              inactive-text="關閉" />
+          </el-form-item>
+          <hr class="text-hd-black" />
+        </article>
 
         <div class="flex justify-center">
           <el-button type="primary" @click="handleSubmit" class="w-full">確定</el-button>
