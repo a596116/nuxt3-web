@@ -3,6 +3,7 @@ interface Menu {
   link?: string
   children?: Menu[]
 }
+
 export const menus: Menu[] = [
   {
     name: '作品',
