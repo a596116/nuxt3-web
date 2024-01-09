@@ -74,14 +74,14 @@ export default defineNuxtConfig({
     },
   },
 
-  robots: {
-    rules: [
-      {
-        UserAgent: '*',
-        Disallow: '/',
-      },
-    ],
-  },
+  // robots: {
+  //   rules: [
+  //     {
+  //       UserAgent: '*',
+  //       Disallow: '/',
+  //     },
+  //   ],
+  // },
 
   // vite
   vite: createViteConfig(),

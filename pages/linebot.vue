@@ -6,6 +6,7 @@
       label-width="auto"
       label-position="left"
       class="hd-form p-4">
+      {{ state.error }}
       <HeadTitle title="開啟自動推播" class="mb-4 text-[#164863]"></HeadTitle>
       <span class="mb-4 flex items-center justify-center text-lg text-[#427D9D]">{{
         state.profile.displayName
@@ -66,6 +67,7 @@ useSeoMeta({
 
 const state = reactive({
   loading: false,
+  error: '',
   profile: {} as {
     userId: string
     displayName: string
@@ -80,7 +82,8 @@ const state = reactive({
 })
 onMounted(() => {
   liff
-    .init({ liffId: '1657518005-n0BMBGqY' })
+    .init({ liffId: '1657518005-75zAzQry' })
+    // .init({ liffId: '1657518005-n0BMBGqY' })
     .then(() => {
       if (!liff.isLoggedIn()) {
         liff.login()
@@ -114,7 +117,86 @@ const handleFetch = () => {
 /*
  * @description: 提交表單
  */
-const handleSubmit = () => {
+const handleSubmit = async () => {
+  // liff
+  //   .shareTargetPicker([
+  //     {
+  //       type: 'text',
+  //       text: 'Hello, World!',
+  //     },
+  //     {
+  //       type: 'flex',
+  //       altText: 'Nike 發售預告',
+  //       contents: {
+  //         type: 'carousel',
+  //         contents: [
+  //           {
+  //             type: 'bubble',
+  //             body: {
+  //               type: 'box',
+  //               layout: 'vertical',
+  //               contents: [
+  //                 {
+  //                   type: 'image',
+  //                   url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUs_aEHkKmgva-dJGtxwgq4LPMjOfK3ttqRA&usqp=CAU',
+  //                   size: 'full',
+  //                   aspectMode: 'cover',
+  //                 },
+  //               ],
+  //               paddingAll: 'none',
+  //             },
+  //           },
+  //           {
+  //             type: 'bubble',
+  //             body: {
+  //               type: 'box',
+  //               layout: 'vertical',
+  //               contents: [
+  //                 {
+  //                   type: 'image',
+  //                   url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUs_aEHkKmgva-dJGtxwgq4LPMjOfK3ttqRA&usqp=CAU',
+  //                   size: 'full',
+  //                   aspectMode: 'cover',
+  //                 },
+  //               ],
+  //               paddingAll: 'none',
+  //             },
+  //           },
+  //         ],
+  //       },
+  //     },
+  //     {
+  //       type: 'flex',
+  //       altText: '分享',
+  //       contents: {
+  //         type: 'bubble',
+  //         body: {
+  //           type: 'box',
+  //           layout: 'vertical',
+  //           contents: [
+  //             {
+  //               type: 'text',
+  //               text: '分享資訊',
+  //             },
+  //           ],
+  //           paddingAll: 'none',
+  //           height: '50px',
+  //           alignItems: 'center',
+  //           justifyContent: 'center',
+  //           backgroundColor: '#E98364',
+  //           action: {
+  //             type: 'uri',
+  //             label: 'action',
+  //             uri: 'https://liff.line.me/1657518005-75zAzQry',
+  //           },
+  //         },
+  //       },
+  //     },
+  //   ])
+  //   .catch((err) => {
+  //     state.error = err
+  //   })
+  // return
   const params = {
     ...state.profile,
     ...state.form,
