@@ -14,5 +14,3 @@ useHead(() => ({
   title: '關於',
 }))
 </script>
-
-<style scoped></style>
