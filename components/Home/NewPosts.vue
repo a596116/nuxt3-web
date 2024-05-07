@@ -10,7 +10,7 @@
         class="post-img bg-hd-black group z-10 h-[300px] w-[600px] overflow-hidden rounded-md shadow-md max-sm:h-[250px] max-sm:w-[90%]">
         <NuxtImg
           format="webp"
-          :src="post.img"
+          :src="post?.img || '/postBg.webp'"
           alt="浩呆"
           class="h-full w-full object-cover duration-500 group-hover:scale-110" />
       </Anchor>
